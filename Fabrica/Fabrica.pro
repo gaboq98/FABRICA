@@ -25,10 +25,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    almacen.cpp \
+    camion.cpp \
+    nodo.cpp \
+    mezcladorachocolate.cpp \
+    mezcladoramasa.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    almacen.h \
+    camion.h \
+    nodo.h \
+    mezcladorachocolate.h \
+    mezcladoramasa.h
 
 FORMS += \
         mainwindow.ui
