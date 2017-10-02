@@ -30,7 +30,8 @@ SOURCES += \
     camion.cpp \
     nodo.cpp \
     mezcladorachocolate.cpp \
-    mezcladoramasa.cpp
+    mezcladoramasa.cpp \
+    cola.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -38,7 +39,8 @@ HEADERS += \
     camion.h \
     nodo.h \
     mezcladorachocolate.h \
-    mezcladoramasa.h
+    mezcladoramasa.h \
+    cola.h
 
 FORMS += \
         mainwindow.ui

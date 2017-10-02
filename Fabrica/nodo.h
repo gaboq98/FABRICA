@@ -1,10 +1,14 @@
 #ifndef NODO_H
 #define NODO_H
+#include <QApplication>
 
 
-class Nodo
+struct Nodo
 {
-public:
+    QString tipo;
+    int cantidad;
+    int destino;
+    Nodo* siguiente;
     Nodo();
 };
 
