@@ -27,6 +27,7 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     almacen.cpp \
+    camion.cpp \
     nodo.cpp \
     mezcladorachocolate.cpp \
     mezcladoramasa.cpp \
@@ -38,6 +39,7 @@ SOURCES += \
 HEADERS += \
         mainwindow.h \
     almacen.h \
+    camion.h \
     nodo.h \
     mezcladorachocolate.h \
     mezcladoramasa.h \

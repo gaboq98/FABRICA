@@ -1,15 +1,6 @@
 #ifndef MEZCLADORAMASA_H
 #define MEZCLADORAMASA_H
-
-
-struct Masa{
-    float gramos;
-    Masa() {}
-    Masa(float gr){
-        gramos = gr;
-    }
-};
-
+#include "nodo.h"
 
 struct MezcladoraMasa{
     int maximo;
@@ -19,7 +10,8 @@ struct MezcladoraMasa{
     MezcladoraMasa();
     MezcladoraMasa(int min, int max);
     void insertarMasa(int cant);
-    Masa* procesa();
+    Nodo* procesa();
+    int pedir(int cant);
 };
 
 #endif // MEZCLADORAMASA_H

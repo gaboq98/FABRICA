@@ -13,7 +13,15 @@ void MezcladoraMasa::insertarMasa(int cant){
     cantidad += cant;
 }
 
-Masa* MezcladoraMasa::procesa(){
+Nodo* MezcladoraMasa::procesa(){
     cantidad -= ups;
-    return new Masa(ups);
+    return NULL;
+}
+
+int MezcladoraMasa::pedir(int cantidad) {
+    if(cantidad < minimo) {
+        return cantidad;
+    } else {
+        return NULL;
+    }
 }
