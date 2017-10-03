@@ -3,8 +3,7 @@
 #include "cola.h"
 
 
-struct Camion
-{
+struct Camion{
     Camion();
     Cola* pedidos = new Cola();
     bool play;

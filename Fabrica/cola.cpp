@@ -1,7 +1,6 @@
 #include "cola.h"
 
-Cola::Cola()
-{
+Cola::Cola(){
    fondo = frente = NULL;
 }
 

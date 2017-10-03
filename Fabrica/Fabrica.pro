@@ -32,7 +32,8 @@ SOURCES += \
     mezcladoramasa.cpp \
     cola.cpp \
     camion.cpp \
-    almacenfinal.cpp
+    almacenfinal.cpp \
+    horno.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -42,7 +43,8 @@ HEADERS += \
     mezcladoramasa.h \
     cola.h \
     camion.h \
-    almacenfinal.h
+    almacenfinal.h \
+    horno.h
 
 FORMS += \
         mainwindow.ui

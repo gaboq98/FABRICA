@@ -9,6 +9,7 @@ struct Cola
     Nodo* fondo;
     Cola();
     bool isEmpty();
+
     void encolar(QString tipo,
                  int cant, int dest);
     Nodo* desencolar();
