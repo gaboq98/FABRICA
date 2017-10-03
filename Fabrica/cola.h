@@ -5,7 +5,8 @@
 struct Cola
 {
     Cola();
-    void enolar();
+    int enolar(int valor);
+    void desencolar();
 };
 
 #endif // COLA_H

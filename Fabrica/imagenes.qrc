@@ -4,5 +4,12 @@
         <file>inicio.png</file>
         <file>pausa.png</file>
         <file>reinicio.png</file>
+        <file>almacen.png</file>
+        <file>almacenFinal.png</file>
+        <file>mezcladora.png</file>
+        <file>obrero.png</file>
+        <file>planificador.png</file>
+        <file>transportadora.png</file>
+        <file>mezclador.png</file>
     </qresource>
 </RCC>

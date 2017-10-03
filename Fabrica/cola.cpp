@@ -4,3 +4,7 @@ Cola::Cola()
 {
 
 }
+
+Cola::enolar(int valor) {
+    return valor;
+}
