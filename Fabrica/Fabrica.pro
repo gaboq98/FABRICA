@@ -27,20 +27,20 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     almacen.cpp \
-    camion.cpp \
     nodo.cpp \
     mezcladorachocolate.cpp \
     mezcladoramasa.cpp \
-    cola.cpp
+    cola.cpp \
+    camion.cpp
 
 HEADERS += \
         mainwindow.h \
     almacen.h \
-    camion.h \
     nodo.h \
     mezcladorachocolate.h \
     mezcladoramasa.h \
-    cola.h
+    cola.h \
+    camion.h
 
 FORMS += \
         mainwindow.ui

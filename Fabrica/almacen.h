@@ -7,7 +7,6 @@ struct Almacen
 {
 public:
     Almacen();
-    void cargarCamion(Carga* carga);
 };
 
 #endif // ALMACEN_H
