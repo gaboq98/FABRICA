@@ -5,7 +5,8 @@
 
 struct Almacen
 {
-public:
+    int cantMasa;
+    int cantChoco;
     Almacen();
     void cargarCamion(Carga* carga);
 };

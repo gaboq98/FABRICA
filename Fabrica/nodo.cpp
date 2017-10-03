@@ -12,6 +12,7 @@ Nodo::Nodo(QString _tipo, int _cantidad,int _destino){
     siguiente = NULL;
 }
 
+
 Nodo::Nodo(QString _tipo, int _cantidad){
     tipo = _tipo;
     cantidad = _cantidad;
