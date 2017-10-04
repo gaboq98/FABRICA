@@ -6,7 +6,8 @@
 struct Camion{
     Camion();
     Cola* pedidos = new Cola();
-    bool play;
+    bool encendido;
+    int entregar(int maquina, int cantidad);
 };
 
 #endif // CAMION_H

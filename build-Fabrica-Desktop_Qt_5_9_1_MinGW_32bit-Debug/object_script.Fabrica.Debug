@@ -1,0 +1,16 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\almacen.o
+./debug\nodo.o
+./debug\mezcladorachocolate.o
+./debug\mezcladoramasa.o
+./debug\cola.o
+./debug\almacenfinal.o
+./debug\horno.o
+./debug\camion.o
+./debug\configuracion.o
+./debug\qrc_imagenes.o
+./debug\moc_mainwindow.o
+./debug\moc_configuracion.o
+);

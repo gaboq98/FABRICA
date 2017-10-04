@@ -11,5 +11,11 @@
         <file>planificador.png</file>
         <file>transportadora.png</file>
         <file>mezclador.png</file>
+        <file>ensambladora.png</file>
+        <file>maesitos.png</file>
+        <file>obreros.png</file>
+        <file>empacadora.png</file>
+        <file>config.png</file>
+        <file>horno.png</file>
     </qresource>
 </RCC>

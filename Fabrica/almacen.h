@@ -8,7 +8,6 @@ struct Almacen
     int cantMasa;
     int cantChoco;
     Almacen();
-    void cargarCamion(Carga* carga);
 };
 
 #endif // ALMACEN_H

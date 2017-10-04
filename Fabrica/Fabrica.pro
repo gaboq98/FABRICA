@@ -27,14 +27,14 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     almacen.cpp \
-    camion.cpp \
     nodo.cpp \
     mezcladorachocolate.cpp \
     mezcladoramasa.cpp \
     cola.cpp \
-    camion.cpp \
     almacenfinal.cpp \
-    horno.cpp
+    horno.cpp \
+    camion.cpp \
+    configuracion.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -46,10 +46,12 @@ HEADERS += \
     cola.h \
     camion.h \
     almacenfinal.h \
-    horno.h
+    horno.h \
+    configuracion.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    configuracion.ui
 
 RESOURCES += \
     imagenes.qrc
