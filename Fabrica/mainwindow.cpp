@@ -12,9 +12,3 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
-void MainWindow::on_pushButton_clicked()
-{
-    config.setModal(true);
-    config.exec();
-}
