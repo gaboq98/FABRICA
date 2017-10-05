@@ -4,18 +4,21 @@
 
 MainThread::MainThread(QObject *parent) : QThread(parent)
 {
-
+    this->encendido = true;
+    this->detenerse = false;
 }
 
 void MainThread::run()
 {
     int i = 0;
-    while (true) {
+    while (encendido) {
         if(detenerse)
-            break;
-        emit cambiarNumero(i++);
-        qDebug() << this->nombre << "come penes";
-        sleep(1);
+            sleep(0.5);
+        else {
+            emit cambiarNumero(i++);
+            qDebug() << i << "come penes";
+            sleep(1);
+        }
     }
 
 }

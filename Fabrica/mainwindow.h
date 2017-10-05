@@ -18,12 +18,11 @@ public:
 
 
 public slots:
-    void cambiandoNumero(int);
+    void cambiandoMezcladora1(int);
 
 
 private slots:
     void on_btnInicio_clicked();
-
     void on_btnPausa_clicked();
 
 private:
