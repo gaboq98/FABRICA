@@ -1,6 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include "mainthread.h"
+#include "mezcladorasthread.h"
+#include "camion.h"
 #include <QMainWindow>
 
 namespace Ui {
@@ -14,11 +16,19 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    MainThread *thread1;
+
+    Camion *camionMezcladoras = new Camion();
+    MezcladoraMasa *mezcladora1 = new MezcladoraMasa(camionMezcladoras, 1);
+    MezcladoraMasa *mezcladora2 = new MezcladoraMasa(camionMezcladoras, 2);
+    MezcladoraMasa *mezcladora3 = new MezcladoraMasa(camionMezcladoras, 3);
+    MezcladorasThread *mezcladorasThread;
+
 
 
 public slots:
     void cambiandoMezcladora1(int);
+    void cambiandoMezcladora2(int);
+    void cambiandoMezcladora3(int);
 
 
 private slots:

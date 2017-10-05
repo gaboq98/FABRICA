@@ -4,6 +4,12 @@ MezcladoraMasa::MezcladoraMasa(){
     ups = cantidad = minimo = maximo = 0;
 }
 
+MezcladoraMasa::MezcladoraMasa(Camion _cola, int _maquina)
+{
+    cola = _cola;
+    maquina = _maquina;
+}
+
 MezcladoraMasa::MezcladoraMasa(int min, int max){
     minimo = min;
     maximo = max;
@@ -18,10 +24,12 @@ Nodo* MezcladoraMasa::procesa(){
     return NULL;
 }
 
-int MezcladoraMasa::pedir(int cantidad) {
-    if(cantidad < minimo) {
-        return cantidad;
-    } else {
-        return NULL;
+void MezcladoraMasa::pedir(int cantidad) {
+    while (true) {
+        if(cantidad < minimo) {
+            cola->recibirPedido(maquina ,cantidad);
+        } else {
+            return NULL;
+        }
     }
 }
