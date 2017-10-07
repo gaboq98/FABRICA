@@ -154,8 +154,8 @@ border-image: url(:/camion.png);</string>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>150</y>
+      <x>340</x>
+      <y>130</y>
       <width>101</width>
       <height>91</height>
      </rect>
@@ -175,7 +175,7 @@ border-image: url(:/transportadora.png);</string>
     <property name="geometry">
      <rect>
       <x>340</x>
-      <y>280</y>
+      <y>240</y>
       <width>101</width>
       <height>91</height>
      </rect>
@@ -601,8 +601,8 @@ background-repeat: none;</string>
     </property>
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>140</y>
+      <x>370</x>
+      <y>120</y>
       <width>51</width>
       <height>21</height>
      </rect>
@@ -630,7 +630,7 @@ background-repeat: none;</string>
     <property name="geometry">
      <rect>
       <x>370</x>
-      <y>270</y>
+      <y>230</y>
       <width>51</width>
       <height>21</height>
      </rect>

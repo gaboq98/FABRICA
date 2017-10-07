@@ -7,7 +7,6 @@ struct Camion{
     Camion();
     Cola* pedidos = new Cola();
     bool encendido;
-    void recibirPedido(int maquina, int cantidad);
     int entregar(int maquina, int cantidad);
 };
 

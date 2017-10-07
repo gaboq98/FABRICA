@@ -5,13 +5,6 @@ Nodo::Nodo()
 
 }
 
-Nodo::Nodo(int cantidad, int destino)
-{
-    cantidad = _cantidad;
-    destino = _destino;
-    siguiente = NULL;
-}
-
 Nodo::Nodo(QString _tipo, int _cantidad,int _destino){
     tipo = _tipo;
     cantidad = _cantidad;
