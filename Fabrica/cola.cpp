@@ -23,11 +23,11 @@ Nodo *Cola::desencolar(){
     }
 }
 
-void Cola::encolar(QString tipo, int cant, int dest){
+void Cola::encolar(int cant, int dest){
     if(isEmpty())
-        frente = fondo = new Nodo(tipo,cant,dest);
+        frente = fondo = new Nodo(cant,dest);
     else{
-        fondo->siguiente = new Nodo(tipo,cant,dest);
+        fondo->siguiente = new Nodo(cant,dest);
         fondo = fondo->siguiente;
     }
 }

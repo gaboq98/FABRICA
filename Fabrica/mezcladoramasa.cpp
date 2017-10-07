@@ -4,24 +4,20 @@ MezcladoraMasa::MezcladoraMasa(){
     ups = cantidad = minimo = maximo = 0;
 }
 
-MezcladoraMasa::MezcladoraMasa(int min, int max){
-    minimo = min;
-    maximo = max;
-}
 
 void MezcladoraMasa::insertarMasa(int cant){
     cantidad += cant;
 }
 
-Nodo* MezcladoraMasa::procesa(){
+void MezcladoraMasa::procesa(){
     cantidad -= ups;
-    return NULL;
+    pedir(maximo-minimo);
 }
 
-int MezcladoraMasa::pedir(int cantidad) {
-    if(cantidad < minimo) {
-        return cantidad;
-    } else {
-        return NULL;
+void MezcladoraMasa::pedir(int cantidad) {
+    if(encendido) {
+        if(cantidad <= minimo) {
+            camion->recibirPedido(maquina, cantidad);
+        }
     }
 }

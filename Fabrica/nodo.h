@@ -10,8 +10,7 @@ struct Nodo
     int destino;
     Nodo* siguiente;
     Nodo();
-    Nodo(QString _tipo, int _cantidad,int _destino);
-    Nodo(QString _tipo, int _cantidad);
+    Nodo(int _cantidad,int _destino);
 };
 
 #endif // NODO_H

@@ -1,6 +1,5 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include "mainthread.h"
 #include <QMainWindow>
 
 namespace Ui {
@@ -14,11 +13,12 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    MainThread *thread1;
 
 
 public slots:
     void cambiandoMezcladora1(int);
+    void cambiandoMezcladora2(int);
+    void cambiandoMezcladora3(int);
 
 
 private slots:

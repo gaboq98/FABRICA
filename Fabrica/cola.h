@@ -10,8 +10,7 @@ struct Cola
     Cola();
     bool isEmpty();
 
-    void encolar(QString tipo,
-                 int cant, int dest);
+    void encolar(int cant, int dest);
     Nodo* desencolar();
 };
 

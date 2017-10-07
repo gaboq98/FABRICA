@@ -2,7 +2,7 @@
 #define HORNO_H
 
 
-class Horno
+struct Horno
 {
 public:
     Horno();
