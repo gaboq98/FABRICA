@@ -35,7 +35,8 @@ SOURCES += \
     horno.cpp \
     camion.cpp \
     configuracion.cpp \
-    mainthread.cpp
+    mainthread.cpp \
+    mezcladorasthread.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -49,7 +50,8 @@ HEADERS += \
     almacenfinal.h \
     horno.h \
     configuracion.h \
-    mainthread.h
+    mainthread.h \
+    mezcladorasthread.h
 
 FORMS += \
         mainwindow.ui \

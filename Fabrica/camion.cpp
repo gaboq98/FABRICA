@@ -1,6 +1,11 @@
 #include "camion.h"
-#include <QDebug>
 
+
+Camion::Camion()
+{
+    pedidos = new Cola();
+    encendido = true;
+}
 
 int Camion :: entregar(int maquina, int cantidad) {
     if(encendido) {
@@ -12,7 +17,7 @@ int Camion :: entregar(int maquina, int cantidad) {
 void Camion::recibirPedido(int maquina, int cantidad)
 {
     if(encendido) {
-        Nodo* temp = new Nodo(maquina, cantidad);
         pedidos->encolar(cantidad, maquina);
+        qDebug() << "camion" << cantidad;
     }
 }

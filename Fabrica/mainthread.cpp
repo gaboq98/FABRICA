@@ -10,16 +10,6 @@ MainThread::MainThread(QObject *parent) : QThread(parent)
 
 void MainThread::run()
 {
-    int i = 0;
-    while (encendido) {
-        if(detenerse)
-            sleep(0.5);
-        else {
-            emit cambiarNumero(i++);
-            qDebug() << i << "come penes";
-            sleep(1);
-        }
-    }
 
 }
 

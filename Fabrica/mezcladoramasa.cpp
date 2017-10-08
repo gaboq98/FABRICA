@@ -1,23 +1,27 @@
 #include "mezcladoramasa.h"
 
 MezcladoraMasa::MezcladoraMasa(){
-    ups = cantidad = minimo = maximo = 0;
+    ups = cantidad = minimo = maximo = procesado = 0;
+    encendido = true;
 }
 
-
 void MezcladoraMasa::insertarMasa(int cant){
-    cantidad += cant;
+    if(encendido) {
+        cantidad += cant;
+    }
 }
 
 void MezcladoraMasa::procesa(){
-    cantidad -= ups;
-    pedir(maximo-minimo);
+    if(encendido) {
+        pedir(maximo-minimo);
+        cantidad -= ups;
+    }
 }
 
 void MezcladoraMasa::pedir(int cantidad) {
     if(encendido) {
-        if(cantidad <= minimo) {
-            camion->recibirPedido(maquina, cantidad);
+        if(this->cantidad <= minimo) {
+            this->cantidad = cantidad;
         }
     }
 }

@@ -2,6 +2,8 @@
 #define MEZCLADORAMASA_H
 #include "nodo.h"
 #include "camion.h"
+#include "QDebug"
+#include <QtCore>
 
 struct MezcladoraMasa{
     int maximo;
@@ -11,6 +13,7 @@ struct MezcladoraMasa{
     Camion *camion;
     int ups; // unidades por segundo
     bool encendido;
+    int procesado;
     MezcladoraMasa();
 
     void insertarMasa(int cant);
