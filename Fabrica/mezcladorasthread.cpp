@@ -25,6 +25,6 @@ void MezcladorasThread::run()
             mezcladora1->procesado = mezcladora1->procesado + mezcladora1->ups;
             emit banda(mezcladora1->procesado);
             sleep(1);
-        }
+        }        
     }
 }

@@ -36,6 +36,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(mezcladoraThread3, SIGNAL(entregarM1(int)), this, SLOT(cambiandoMezcladora3(int)));
 
     connect(mezcladoraThread1, SIGNAL(banda(int)), this, SLOT(cambiarBanda1(int)));
+    connect(mezcladoraThread2, SIGNAL(banda(int)), this, SLOT(cambiarBanda12(int)));
     connect(mezcladoraThread3, SIGNAL(banda(int)), this, SLOT(cambiarBanda2(int)));
 
 }
@@ -68,8 +69,12 @@ void MainWindow::cambiandoMezcladora3(int num)
 
 void MainWindow::cambiarBanda1(int num)
 {
-    qDebug() << mezcladora2->procesado;
     ui->cintaMezcla->setValue(num + mezcladora2->procesado);
+}
+
+void MainWindow::cambiarBanda12(int num)
+{
+    ui->cintaMezcla->setValue(num + mezcladora1->procesado);
 }
 
 void MainWindow::cambiarBanda2(int num)
@@ -95,3 +100,25 @@ void MainWindow::on_btnPausa_clicked()
     mezcladoraThread2->detenerse = true;
     mezcladoraThread3->detenerse = true;
 }
+
+void MainWindow::on_btnMezcladora1_clicked()
+{
+    mezcladoraThread1->detenerse = !mezcladoraThread1->detenerse;
+}
+
+void MainWindow::on_btnMezcladora2_clicked()
+{
+    mezcladoraThread2->detenerse = !mezcladoraThread2->detenerse;
+}
+
+void MainWindow::on_btnMezcladora3_clicked()
+{
+    mezcladoraThread3->detenerse = !mezcladoraThread3->detenerse;
+}
+
+
+
+
+
+
+

@@ -155,7 +155,7 @@ border-image: url(:/camion.png);</string>
     <property name="geometry">
      <rect>
       <x>340</x>
-      <y>130</y>
+      <y>150</y>
       <width>101</width>
       <height>91</height>
      </rect>
@@ -175,7 +175,7 @@ border-image: url(:/transportadora.png);</string>
     <property name="geometry">
      <rect>
       <x>340</x>
-      <y>240</y>
+      <y>290</y>
       <width>101</width>
       <height>91</height>
      </rect>
@@ -614,7 +614,7 @@ background-repeat: none;</string>
     <property name="geometry">
      <rect>
       <x>370</x>
-      <y>120</y>
+      <y>140</y>
       <width>51</width>
       <height>21</height>
      </rect>
@@ -645,7 +645,7 @@ background-repeat: none;</string>
     <property name="geometry">
      <rect>
       <x>370</x>
-      <y>230</y>
+      <y>280</y>
       <width>51</width>
       <height>21</height>
      </rect>

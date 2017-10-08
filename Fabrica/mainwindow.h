@@ -27,12 +27,16 @@ public slots:
     void cambiandoMezcladora2(int);
     void cambiandoMezcladora3(int);
     void cambiarBanda1(int);
+    void cambiarBanda12(int);
     void cambiarBanda2(int);
 
 
 private slots:
     void on_btnInicio_clicked();
     void on_btnPausa_clicked();
+    void on_btnMezcladora1_clicked();
+    void on_btnMezcladora2_clicked();
+    void on_btnMezcladora3_clicked();
 
 private:
     Ui::MainWindow *ui;
