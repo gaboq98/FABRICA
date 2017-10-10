@@ -20,6 +20,7 @@ public:
     MezcladorasThread *mezcladoraThread1;
     MezcladorasThread *mezcladoraThread2;
     MezcladorasThread *mezcladoraThread3;
+    int maxBanda;
 
 
 public slots:

@@ -27,6 +27,9 @@ MainWindow::MainWindow(QWidget *parent) :
     mezcladora3->ups = 5;
     mezcladora3->maquina = 3;
 
+    maxBanda = 200;
+
+
     mezcladoraThread1 = new MezcladorasThread(mezcladora1);
     mezcladoraThread2 = new MezcladorasThread(mezcladora2);
     mezcladoraThread3 = new MezcladorasThread(mezcladora3);
@@ -69,12 +72,18 @@ void MainWindow::cambiandoMezcladora3(int num)
 
 void MainWindow::cambiarBanda1(int num)
 {
-    ui->cintaMezcla->setValue(num + mezcladora2->procesado);
+    int temp = num + mezcladora2->procesado;
+    ui->cintaMezcla->setValue(temp);
 }
 
 void MainWindow::cambiarBanda12(int num)
 {
-    ui->cintaMezcla->setValue(num + mezcladora1->procesado);
+    int temp = num + mezcladora1->procesado;
+    if(temp == maxBanda) {
+        mezcladoraThread1->detenerse = true;
+        mezcladoraThread2->detenerse = true;
+    }
+    ui->cintaMezcla->setValue(temp);
 }
 
 void MainWindow::cambiarBanda2(int num)
