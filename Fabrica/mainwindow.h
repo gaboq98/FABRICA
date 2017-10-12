@@ -37,6 +37,10 @@ public slots:
     void cambiarBanda2(int);
     void cambiarBandaHorno(int);
     void ponerBanda();
+    void cambiarAprobado1(int);
+    void cambiarAprobado2(int);
+    void cambiarRechazado1(int);
+    void cambiarRechazado2(int);
 
 
 private slots:

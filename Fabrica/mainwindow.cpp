@@ -115,6 +115,26 @@ void MainWindow::ponerBanda()
     ui->ensambladora->setValue(ensambladora->procesado);
 }
 
+void MainWindow::cambiarAprobado1(int num)
+{
+    ui->calida1_aprovados->setValue(num);
+}
+
+void MainWindow::cambiarAprobado2(int num)
+{
+    ui->calida2_aprovados->setValue(num);
+}
+
+void MainWindow::cambiarRechazado1(int num)
+{
+    ui->calida1_desechados->setValue(num);
+}
+
+void MainWindow::cambiarRechazado2(int num)
+{
+    ui->calida2_desechados->setValue(num);
+}
+
 void MainWindow::on_btnInicio_clicked()
 {
     mezcladoraThread1->start();

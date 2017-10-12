@@ -5,7 +5,8 @@ Inspector::Inspector()
     aprobado = rechazado = porcentaje = 0;
 }
 
-int Inspector::recibe(){
+int Inspector::recibe()
+{
     int number = rand() % 100;
     if(number > porcentaje){
         aprobado++;

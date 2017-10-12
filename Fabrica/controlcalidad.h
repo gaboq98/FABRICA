@@ -6,10 +6,11 @@
 struct ControlCalidad
 {
     int banda;
+    int salida;
     Inspector *inspec_1;
     Inspector *inspec_2;
     ControlCalidad();
-    int avanza();
+    void avanza();
 };
 
 #endif // CONTROLCALIDAD_H
