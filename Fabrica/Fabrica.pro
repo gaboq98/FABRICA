@@ -38,7 +38,10 @@ SOURCES += \
     mainthread.cpp \
     mezcladorasthread.cpp \
     ensambladorathread.cpp \
-    ensambladora.cpp
+    ensambladora.cpp \
+    controlcalidad.cpp \
+    inspector.cpp \
+    empacadora.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -55,7 +58,10 @@ HEADERS += \
     mainthread.h \
     mezcladorasthread.h \
     ensambladora.h \
-    ensambladorathread.h
+    ensambladorathread.h \
+    controlcalidad.h \
+    inspector.h \
+    empacadora.h
 
 FORMS += \
         mainwindow.ui \
