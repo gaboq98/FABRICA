@@ -22,8 +22,9 @@ void MezcladorasThread::run()
         else {
             mezcladora1->procesa();
             emit entregarM1(mezcladora1->cantidad);
-            mezcladora1->procesado = mezcladora1->procesado + mezcladora1->ups;
-            emit banda(mezcladora1->procesado);
+            mezcladora1->procesado += mezcladora1->ups;
+            emit banda(mezcladora1->ups);
+            emit recibeBanda();
             sleep(1);
         }        
     }

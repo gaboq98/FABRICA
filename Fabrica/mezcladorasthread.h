@@ -20,7 +20,7 @@ public:
 
 
 signals:
-
+    void recibeBanda();
     void entregarM1(int);
     void banda(int);
 

@@ -10,7 +10,6 @@ struct MezcladoraMasa{
     int minimo;
     int cantidad;
     int maquina;
-    Camion *camion;
     int ups; // unidades por segundo
     bool encendido;
     int procesado;

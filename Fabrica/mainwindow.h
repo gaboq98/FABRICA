@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 #include <QMainWindow>
 #include "mezcladorasthread.h"
+#include "ensambladorathread.h"
 
 namespace Ui {
 class MainWindow;
@@ -14,13 +15,17 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    int maxBanda;
+    int bandaMasa;
+    int bandaChocolate;
     MezcladoraMasa *mezcladora1;
     MezcladoraMasa *mezcladora2;
     MezcladoraMasa *mezcladora3;
     MezcladorasThread *mezcladoraThread1;
     MezcladorasThread *mezcladoraThread2;
     MezcladorasThread *mezcladoraThread3;
-    int maxBanda;
+    Ensambladora *ensambladora;
+    EnsambladoraThread *ensambladoraThread;
 
 
 public slots:
@@ -30,6 +35,8 @@ public slots:
     void cambiarBanda1(int);
     void cambiarBanda12(int);
     void cambiarBanda2(int);
+    void cambiarBandaHorno(int);
+    void ponerBanda();
 
 
 private slots:
@@ -38,6 +45,8 @@ private slots:
     void on_btnMezcladora1_clicked();
     void on_btnMezcladora2_clicked();
     void on_btnMezcladora3_clicked();
+
+    void on_btnEnsambladora_clicked();
 
 private:
     Ui::MainWindow *ui;

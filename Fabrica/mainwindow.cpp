@@ -8,27 +8,27 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    bandaMasa = 0;
+    bandaChocolate = 0;
+
     mezcladora1 = new MezcladoraMasa();
     mezcladora2 = new MezcladoraMasa();
     mezcladora3 = new MezcladoraMasa();
 
     mezcladora1->maximo = 1000;
     mezcladora1->minimo = 30;
-    mezcladora1->ups = 3;
+    mezcladora1->ups = 10;
     mezcladora1->maquina = 1;
 
     mezcladora2->maximo = 400;
     mezcladora2->minimo = 20;
-    mezcladora2->ups = 4;
+    mezcladora2->ups = 5;
     mezcladora2->maquina = 2;
 
-    mezcladora3->maximo = 100;
+    mezcladora3->maximo = 500;
     mezcladora3->minimo = 10;
     mezcladora3->ups = 5;
     mezcladora3->maquina = 3;
-
-    maxBanda = 200;
-
 
     mezcladoraThread1 = new MezcladorasThread(mezcladora1);
     mezcladoraThread2 = new MezcladorasThread(mezcladora2);
@@ -42,6 +42,22 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(mezcladoraThread2, SIGNAL(banda(int)), this, SLOT(cambiarBanda12(int)));
     connect(mezcladoraThread3, SIGNAL(banda(int)), this, SLOT(cambiarBanda2(int)));
 
+    connect(mezcladoraThread1, SIGNAL(recibeBanda()), this, SLOT(ponerBanda()));
+    connect(mezcladoraThread2, SIGNAL(recibeBanda()), this, SLOT(ponerBanda()));
+
+    ensambladora = new Ensambladora();
+
+    ensambladora->mpg = 14;
+    ensambladora->cpg = 4;
+    ensambladora->gps = 1;
+
+    ensambladoraThread = new EnsambladoraThread(ensambladora);
+    ensambladora->masa = &bandaMasa;
+    ensambladora->chocolate = &bandaChocolate;
+
+    connect(ensambladoraThread, SIGNAL(procesadoEnsambladora(int)), this, SLOT(cambiarBandaHorno(int)));
+
+
 }
 
 MainWindow::~MainWindow()
@@ -52,6 +68,8 @@ MainWindow::~MainWindow()
     mezcladoraThread2->wait();
     mezcladoraThread3->encendido = false;
     mezcladoraThread3->wait();
+    ensambladoraThread->encendido = false;
+    ensambladoraThread->wait();
     delete ui;
 }
 
@@ -72,23 +90,29 @@ void MainWindow::cambiandoMezcladora3(int num)
 
 void MainWindow::cambiarBanda1(int num)
 {
-    int temp = num + mezcladora2->procesado;
-    ui->cintaMezcla->setValue(temp);
+    bandaMasa += num;
 }
 
 void MainWindow::cambiarBanda12(int num)
 {
-    int temp = num + mezcladora1->procesado;
-    if(temp == maxBanda) {
-        mezcladoraThread1->detenerse = true;
-        mezcladoraThread2->detenerse = true;
-    }
-    ui->cintaMezcla->setValue(temp);
+    bandaMasa += num;
 }
 
 void MainWindow::cambiarBanda2(int num)
 {
-    ui->cintaChoco->setValue(num);
+    bandaChocolate += num;
+}
+
+void MainWindow::cambiarBandaHorno(int num)
+{
+    ui->cintaHorno->setValue(num);
+}
+
+void MainWindow::ponerBanda()
+{
+    ui->cintaMezcla->setValue(bandaMasa);
+    ui->cintaChoco->setValue(bandaChocolate);
+    ui->ensambladora->setValue(ensambladora->procesado);
 }
 
 void MainWindow::on_btnInicio_clicked()
@@ -101,6 +125,9 @@ void MainWindow::on_btnInicio_clicked()
 
     mezcladoraThread3->start();
     mezcladoraThread3->detenerse = false;
+
+    ensambladoraThread->start();
+    ensambladoraThread->detenerse = false;
 }
 
 void MainWindow::on_btnPausa_clicked()
@@ -108,6 +135,7 @@ void MainWindow::on_btnPausa_clicked()
     mezcladoraThread1->detenerse = true;
     mezcladoraThread2->detenerse = true;
     mezcladoraThread3->detenerse = true;
+    ensambladoraThread->detenerse = true;
 }
 
 void MainWindow::on_btnMezcladora1_clicked()
@@ -125,9 +153,7 @@ void MainWindow::on_btnMezcladora3_clicked()
     mezcladoraThread3->detenerse = !mezcladoraThread3->detenerse;
 }
 
-
-
-
-
-
-
+void MainWindow::on_btnEnsambladora_clicked()
+{
+    ensambladoraThread->detenerse = !ensambladoraThread->detenerse;
+}

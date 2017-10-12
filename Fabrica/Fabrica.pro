@@ -37,6 +37,7 @@ SOURCES += \
     configuracion.cpp \
     mainthread.cpp \
     mezcladorasthread.cpp \
+    ensambladorathread.cpp \
     ensambladora.cpp
 
 HEADERS += \
@@ -53,7 +54,8 @@ HEADERS += \
     configuracion.h \
     mainthread.h \
     mezcladorasthread.h \
-    ensambladora.h
+    ensambladora.h \
+    ensambladorathread.h
 
 FORMS += \
         mainwindow.ui \
