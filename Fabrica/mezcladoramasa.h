@@ -1,7 +1,6 @@
 #ifndef MEZCLADORAMASA_H
 #define MEZCLADORAMASA_H
 #include "nodo.h"
-#include "camion.h"
 #include "QDebug"
 #include <QtCore>
 

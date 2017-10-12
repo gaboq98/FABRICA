@@ -106,13 +106,13 @@ void MainWindow::cambiarBanda2(int num)
 void MainWindow::cambiarBandaHorno(int num)
 {
     ui->cintaHorno->setValue(num);
+    ui->ensambladora->setValue(ensambladora->procesado);
 }
 
 void MainWindow::ponerBanda()
 {
     ui->cintaMezcla->setValue(bandaMasa);
     ui->cintaChoco->setValue(bandaChocolate);
-    ui->ensambladora->setValue(ensambladora->procesado);
 }
 
 void MainWindow::cambiarAprobado1(int num)

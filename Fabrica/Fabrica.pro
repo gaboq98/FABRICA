@@ -33,7 +33,6 @@ SOURCES += \
     cola.cpp \
     almacenfinal.cpp \
     horno.cpp \
-    camion.cpp \
     configuracion.cpp \
     mainthread.cpp \
     mezcladorasthread.cpp \
@@ -48,12 +47,10 @@ SOURCES += \
 HEADERS += \
         mainwindow.h \
     almacen.h \
-    camion.h \
     nodo.h \
     mezcladorachocolate.h \
     mezcladoramasa.h \
     cola.h \
-    camion.h \
     almacenfinal.h \
     horno.h \
     configuracion.h \
