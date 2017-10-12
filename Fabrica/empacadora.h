@@ -1,11 +1,14 @@
 #ifndef EMPACADORA_H
 #define EMPACADORA_H
+#include <QVector>
 
 
-class Empacadora
+struct Empacadora
 {
     int banda;
+    QVector<int> tiposDePaquete;
     Empacadora();
+    int empaca();
 };
 
 #endif // EMPACADORA_H
