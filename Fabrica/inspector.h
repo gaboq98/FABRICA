@@ -8,6 +8,7 @@ struct Inspector
     int porcentaje;
     int aprobado;
     int rechazado;
+    bool detenerse;
     Inspector();
     int recibe();
 };

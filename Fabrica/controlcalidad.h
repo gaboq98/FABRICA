@@ -5,7 +5,7 @@
 
 struct ControlCalidad
 {
-    int banda;
+    int *banda;
     int salida;
     Inspector *inspec_1;
     Inspector *inspec_2;

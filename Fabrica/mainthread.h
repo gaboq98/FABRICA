@@ -12,6 +12,7 @@ public:
     bool encendido;
     bool detenerse;
 
+
 signals:
 
     void cambiarNumero(int);

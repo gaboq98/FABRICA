@@ -42,7 +42,8 @@ SOURCES += \
     inspector.cpp \
     empacadora.cpp \
     controlcalidadthread.cpp \
-    empacadorathread.cpp
+    empacadorathread.cpp \
+    hornothread.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -62,7 +63,8 @@ HEADERS += \
     inspector.h \
     empacadora.h \
     controlcalidadthread.h \
-    empacadorathread.h
+    empacadorathread.h \
+    hornothread.h
 
 FORMS += \
         mainwindow.ui \

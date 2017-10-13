@@ -3,6 +3,8 @@
 #include <QMainWindow>
 #include "mezcladorasthread.h"
 #include "ensambladorathread.h"
+#include "hornothread.h"
+#include "controlcalidadthread.h"
 
 namespace Ui {
 class MainWindow;
@@ -15,9 +17,9 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    int maxBanda;
     int bandaMasa;
     int bandaChocolate;
+    int bandaHorno;
     MezcladoraMasa *mezcladora1;
     MezcladoraMasa *mezcladora2;
     MezcladoraMasa *mezcladora3;
@@ -26,6 +28,9 @@ public:
     MezcladorasThread *mezcladoraThread3;
     Ensambladora *ensambladora;
     EnsambladoraThread *ensambladoraThread;
+    HornoThread *hornoThread;
+    ControlCalidad *controlCalidad;
+    ControlCalidadThread *controlThread;
 
 
 public slots:
@@ -41,6 +46,8 @@ public slots:
     void cambiarAprobado2(int);
     void cambiarRechazado1(int);
     void cambiarRechazado2(int);
+    void hornosActual(int, int, int, int, int, int);
+    void hornosTotal(int, int, int, int, int, int);
 
 
 private slots:
@@ -49,8 +56,15 @@ private slots:
     void on_btnMezcladora1_clicked();
     void on_btnMezcladora2_clicked();
     void on_btnMezcladora3_clicked();
-
     void on_btnEnsambladora_clicked();
+    void on_btnHorno1_clicked();
+    void on_btnHorno_2_clicked();
+    void on_btnHorno_3_clicked();
+    void on_btnHorno_4_clicked();
+
+    void on_btnCalidad1_clicked();
+
+    void on_btnCalidad2_clicked();
 
 private:
     Ui::MainWindow *ui;
