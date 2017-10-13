@@ -14,22 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
     mezcladora1 = new MezcladoraMasa();
     mezcladora2 = new MezcladoraMasa();
     mezcladora3 = new MezcladoraMasa();
-    /*
-    mezcladora1->maximo = 1000;
-    mezcladora1->minimo = 30;
-    mezcladora1->ups = 10;
-    mezcladora1->maquina = 1;
 
-    mezcladora2->maximo = 400;
-    mezcladora2->minimo = 20;
-    mezcladora2->ups = 5;
-    mezcladora2->maquina = 2;
-
-    mezcladora3->maximo = 500;
-    mezcladora3->minimo = 10;
-    mezcladora3->ups = 5;
-    mezcladora3->maquina = 3;
-    */
     mezcladoraThread1 = new MezcladorasThread(mezcladora1);
     mezcladoraThread2 = new MezcladorasThread(mezcladora2);
     mezcladoraThread3 = new MezcladorasThread(mezcladora3);
@@ -47,10 +32,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ensambladora = new Ensambladora();
 
-    ensambladora->mpg = 14;
-    ensambladora->cpg = 4;
-    //ensambladora->gps = 1;
-
     ensambladoraThread = new EnsambladoraThread(ensambladora);
     ensambladora->masa = &bandaMasa;
     ensambladora->chocolate = &bandaChocolate;
@@ -61,30 +42,12 @@ MainWindow::MainWindow(QWidget *parent) :
 
     hornoThread = new HornoThread();
     hornoThread->galletas = &bandaHorno;
-    /*
-    hornoThread->horno1->maximo = 10;
-    hornoThread->horno1->tiempo = 10;
-    hornoThread->horno2->maximo = 10;
-    hornoThread->horno2->tiempo = 10;
-    hornoThread->horno3->maximo = 10;
-    hornoThread->horno3->tiempo = 10;
-    hornoThread->horno4->maximo = 10;
-    hornoThread->horno4->tiempo = 10;
-    hornoThread->horno5->maximo = 10;
-    hornoThread->horno5->tiempo = 10;
-    hornoThread->horno6->maximo = 10;
-    hornoThread->horno6->tiempo = 10;
-    */
 
     connect(hornoThread, SIGNAL(cambiarHornos(int,int,int,int,int,int)), this, SLOT(hornosActual(int,int,int,int,int,int)));
     connect(hornoThread, SIGNAL(totalGalletas(int,int,int,int,int,int)), this, SLOT(hornosTotal(int,int,int,int,int,int)));
 
     controlCalidad = new ControlCalidad();
     controlCalidad->banda = &hornoThread->galletasCocinadas;
-    /*
-    controlCalidad->inspec_1->porcentaje = 50;
-    controlCalidad->inspec_2->porcentaje = 50;
-    */
 
     controlThread = new ControlCalidadThread(controlCalidad);
 
@@ -93,8 +56,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(controlThread, SIGNAL( entregaRech1(int)), this, SLOT(cambiarRechazado1(int)));
     connect(controlThread, SIGNAL( entregaRech2(int)), this, SLOT(cambiarRechazado2(int)));
 
-    config = new Configuracion(mezcladora1, mezcladora2, mezcladora3, ensambladora, hornoThread, controlCalidad);
-
+    config = new Configuracion(this);
+    config->asignarValores(mezcladora1, mezcladora2, mezcladora3, ensambladora, hornoThread, controlCalidad);
 
 }
 

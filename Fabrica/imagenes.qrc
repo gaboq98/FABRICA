@@ -18,5 +18,6 @@
         <file>config.png</file>
         <file>horno.png</file>
         <file>cambiar.png</file>
+        <file>hecho.png</file>
     </qresource>
 </RCC>

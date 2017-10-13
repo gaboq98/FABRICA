@@ -63,9 +63,7 @@ private slots:
     void on_btnHorno_2_clicked();
     void on_btnHorno_3_clicked();
     void on_btnHorno_4_clicked();
-
     void on_btnCalidad1_clicked();
-
     void on_btnCalidad2_clicked();
 
 private:

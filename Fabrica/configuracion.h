@@ -19,46 +19,15 @@ public:
     ~Configuracion();
     Ui::Configuracion *ui;
 
-    Configuracion(MezcladoraMasa *m1, MezcladoraMasa *m2, MezcladoraMasa *m3, Ensambladora *e,
-                  HornoThread *horno, ControlCalidad *c1);
+    MezcladoraMasa *mezcladora1;
+    MezcladoraMasa *mezcladora2;
+    MezcladoraMasa *mezcladora3;
+    Ensambladora *ensambladora;
+    HornoThread *horno;
+    ControlCalidad *controlCalidad;
 
-    int *maxMezcladora1;
-    int *minMezcladora1;
-    int *upsMezcladora1;
-
-    int *maxMezcladora2;
-    int *minMezcladora2;
-    int *upsMezcladora2;
-
-    int *maxMezcladora3;
-    int *minMezcladora3;
-    int *upsMezcladora3;
-
-    int *mspEnsambladora;
-    int *cspEnsambladora;
-    int *gspEnsambladora;
-
-    int *maxHorno1;
-    int *tiempoHorno1;
-
-    int *maxHorno2;
-    int *tiempoHorno2;
-
-    int *maxHorno3;
-    int *tiempoHorno3;
-
-    int *maxHorno4;
-    int *tiempoHorno4;
-
-    int *maxHorno5;
-    int *tiempoHorno5;
-
-    int *maxHorno6;
-    int *tiempoHorno6;
-
-    int *porcentajeInspector1;
-
-    int *porcentajeInspector2;
+    void asignarValores(MezcladoraMasa *m1, MezcladoraMasa *m2, MezcladoraMasa *m3, Ensambladora *e,
+                        HornoThread *horno, ControlCalidad *c1);
 
 };
 

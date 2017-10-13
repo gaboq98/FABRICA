@@ -14,33 +14,46 @@ Configuracion::~Configuracion()
     delete ui;
 }
 
-Configuracion::Configuracion(MezcladoraMasa *m1, MezcladoraMasa *m2, MezcladoraMasa *m3, Ensambladora *e, HornoThread *horno, ControlCalidad *c1)
+void Configuracion::asignarValores(MezcladoraMasa *m1, MezcladoraMasa *m2, MezcladoraMasa *m3, Ensambladora *e, HornoThread *hornos, ControlCalidad *c1)
 {
-    m1->maximo = ui->max_mezcl1->value();
-    m1->ups = ui->tiempo_mezcl1->value();
+    mezcladora1 = m1;
+    mezcladora2 = m2;
+    mezcladora3 = m3;
+    ensambladora = e;
+    horno = hornos;
+    controlCalidad = c1;
 
-    m2->maximo = ui->max_mezcl2->value();
-    m2->ups = ui->tiempo_mezcl2->value();
+    mezcladora1->maximo = ui->max_mezcl1->value();
+    mezcladora1->ups = ui->gramos_mezcl1->value() / ui->tiempo_mezcl1->value();
+    mezcladora1->minimo = 10;
+    mezcladora2->maximo = ui->max_mezcl2->value();
+    mezcladora2->ups = ui->gramos_mezcl2->value() / ui->tiempo_mezcl2->value();
+    mezcladora2->minimo = 10;
+    mezcladora3->maximo = ui->max_mezcl3->value();
+    mezcladora3->ups = ui->gramos_mezcl3->value() / ui->tiempo_mezcl3->value();
+    mezcladora3->minimo = 10;
 
-    m3->maximo = ui->max_mezcl3->value();
-    m3->ups = ui->tiempo_mezcl3->value();
-
-    e->gps = ui->galletas_ensam->value() / ui->tiempo_ensam->value();
+    ensambladora->gps = ui->galletas_ensam->value() / ui->tiempo_ensam->value();
+    ensambladora->mpg = 8;
+    ensambladora->cpg = 2;
 
     horno->horno1->maximo = ui->max_horno1->value();
-    horno->horno1->tiempo = ui->tiempo_horno1->value();
     horno->horno2->maximo = ui->max_horno2->value();
-    horno->horno2->tiempo = ui->tiempo_horno2->value();
     horno->horno3->maximo = ui->max_horno3->value();
-    horno->horno3->tiempo = ui->tiempo_horno3->value();
     horno->horno4->maximo = ui->max_horno4->value();
-    horno->horno4->tiempo = ui->tiempo_horno4->value();
     horno->horno5->maximo = ui->max_horno5->value();
-    horno->horno5->tiempo = ui->tiempo_horno5->value();
     horno->horno6->maximo = ui->max_horno6->value();
+
+    horno->horno1->tiempo = ui->tiempo_horno1->value();
+    horno->horno2->tiempo = ui->tiempo_horno2->value();
+    horno->horno3->tiempo = ui->tiempo_horno3->value();
+    horno->horno4->tiempo = ui->tiempo_horno4->value();
+    horno->horno5->tiempo = ui->tiempo_horno5->value();
     horno->horno6->tiempo = ui->tiempo_horno6->value();
 
-    c1->inspec_1->porcentaje = ui->prob_inspec_1->value();
-    c1->inspec_2->porcentaje = ui->prob_inspec_2->value();
+    controlCalidad->inspec_1->porcentaje = ui->prob_inspec_1->value();
+    controlCalidad->inspec_2->porcentaje = ui->prob_inspec_2->value();
+    qDebug() << "Asignar valores";
 
 }
+
