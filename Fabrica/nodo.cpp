@@ -10,4 +10,3 @@ Nodo::Nodo(int _cantidad,int _destino){
     destino = _destino;
     siguiente = NULL;
 }
-

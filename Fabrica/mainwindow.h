@@ -18,10 +18,10 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    Configuracion *config;
     int bandaMasa;
     int bandaChocolate;
     int bandaHorno;
+    Configuracion *config;
     MezcladoraMasa *mezcladora1;
     MezcladoraMasa *mezcladora2;
     MezcladoraMasa *mezcladora3;
