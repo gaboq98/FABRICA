@@ -55,8 +55,39 @@ MainWindow::MainWindow(QWidget *parent) :
     ensambladora->masa = &bandaMasa;
     ensambladora->chocolate = &bandaChocolate;
 
+    bandaHorno = -1;
+
     connect(ensambladoraThread, SIGNAL(procesadoEnsambladora(int)), this, SLOT(cambiarBandaHorno(int)));
 
+    hornoThread = new HornoThread();
+    hornoThread->galletas = &bandaHorno;
+    hornoThread->horno1->maximo = 10;
+    hornoThread->horno1->tiempo = 10;
+    hornoThread->horno2->maximo = 10;
+    hornoThread->horno2->tiempo = 10;
+    hornoThread->horno3->maximo = 10;
+    hornoThread->horno3->tiempo = 10;
+    hornoThread->horno4->maximo = 10;
+    hornoThread->horno4->tiempo = 10;
+    hornoThread->horno5->maximo = 10;
+    hornoThread->horno5->tiempo = 10;
+    hornoThread->horno6->maximo = 10;
+    hornoThread->horno6->tiempo = 10;
+
+    connect(hornoThread, SIGNAL(cambiarHornos(int,int,int,int,int,int)), this, SLOT(hornosActual(int,int,int,int,int,int)));
+    connect(hornoThread, SIGNAL(totalGalletas(int,int,int,int,int,int)), this, SLOT(hornosTotal(int,int,int,int,int,int)));
+
+    controlCalidad = new ControlCalidad();
+    controlCalidad->banda = &hornoThread->galletasCocinadas;
+    controlCalidad->inspec_1->porcentaje = 50;
+    controlCalidad->inspec_2->porcentaje = 50;
+
+    controlThread = new ControlCalidadThread(controlCalidad);
+
+    connect(controlThread, SIGNAL( entregaApr1(int)), this, SLOT(cambiarAprobado1(int)));
+    connect(controlThread, SIGNAL( entregaApr2(int)), this, SLOT(cambiarAprobado2(int)));
+    connect(controlThread, SIGNAL( entregaRech1(int)), this, SLOT(cambiarRechazado1(int)));
+    connect(controlThread, SIGNAL( entregaRech2(int)), this, SLOT(cambiarRechazado2(int)));
 
 }
 
@@ -70,6 +101,8 @@ MainWindow::~MainWindow()
     mezcladoraThread3->wait();
     ensambladoraThread->encendido = false;
     ensambladoraThread->wait();
+    hornoThread->encendido = false;
+    hornoThread->wait();
     delete ui;
 }
 
@@ -105,7 +138,8 @@ void MainWindow::cambiarBanda2(int num)
 
 void MainWindow::cambiarBandaHorno(int num)
 {
-    ui->cintaHorno->setValue(num);
+    bandaHorno += num;
+    ui->cintaHorno->setValue(bandaHorno);
     ui->ensambladora->setValue(ensambladora->procesado);
 }
 
@@ -135,6 +169,26 @@ void MainWindow::cambiarRechazado2(int num)
     ui->calida2_desechados->setValue(num);
 }
 
+void MainWindow::hornosActual(int h1, int h2, int h3, int h4, int h5, int h6)
+{
+    ui->horno_1->setValue(h1);
+    ui->horno_2->setValue(h2);
+    ui->horno_3->setValue(h3);
+    ui->horno_4->setValue(h4);
+    ui->horno_5->setValue(h5);
+    ui->horno_6->setValue(h6);
+}
+
+void MainWindow::hornosTotal(int h1, int h2, int h3, int h4, int h5, int h6)
+{
+    ui->horno1_total->setValue(h1);
+    ui->horno2_total->setValue(h2);
+    ui->horno3_total->setValue(h3);
+    ui->horno4_total->setValue(h4);
+    ui->horno5_total->setValue(h5);
+    ui->horno6_total->setValue(h6);
+}
+
 void MainWindow::on_btnInicio_clicked()
 {
     mezcladoraThread1->start();
@@ -148,6 +202,12 @@ void MainWindow::on_btnInicio_clicked()
 
     ensambladoraThread->start();
     ensambladoraThread->detenerse = false;
+
+    hornoThread->start();
+    hornoThread->detenerse = false;
+
+    controlThread->start();
+    controlThread->detenerse = false;
 }
 
 void MainWindow::on_btnPausa_clicked()
@@ -156,6 +216,8 @@ void MainWindow::on_btnPausa_clicked()
     mezcladoraThread2->detenerse = true;
     mezcladoraThread3->detenerse = true;
     ensambladoraThread->detenerse = true;
+    hornoThread->detenerse = true;
+    controlThread->detenerse = true;
 }
 
 void MainWindow::on_btnMezcladora1_clicked()
@@ -176,4 +238,24 @@ void MainWindow::on_btnMezcladora3_clicked()
 void MainWindow::on_btnEnsambladora_clicked()
 {
     ensambladoraThread->detenerse = !ensambladoraThread->detenerse;
+}
+
+void MainWindow::on_btnHorno1_clicked()
+{
+    hornoThread->horno1->encendido = !hornoThread->horno1->encendido;
+}
+
+void MainWindow::on_btnHorno_2_clicked()
+{
+    hornoThread->horno4->encendido = !hornoThread->horno4->encendido;
+}
+
+void MainWindow::on_btnHorno_3_clicked()
+{
+    hornoThread->horno3->encendido = !hornoThread->horno3->encendido;
+}
+
+void MainWindow::on_btnHorno_4_clicked()
+{
+    hornoThread->horno6->encendido = !hornoThread->horno6->encendido;
 }

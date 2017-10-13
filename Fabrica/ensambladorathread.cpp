@@ -20,7 +20,7 @@ void EnsambladoraThread::run()
             sleep(0.5);
         } else {
             ensambladora->procesa();
-            emit procesadoEnsambladora(ensambladora->procesado);
+            emit procesadoEnsambladora(ensambladora->gps);
             sleep(1);
         }
     }

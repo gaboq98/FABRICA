@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1125</width>
-    <height>638</height>
+    <width>1127</width>
+    <height>661</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -537,6 +537,9 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
   </widget>
   <widget class="QSpinBox" name="max_mezcl1">
    <property name="geometry">
@@ -546,6 +549,9 @@
      <width>42</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
    </property>
   </widget>
   <widget class="QSpinBox" name="max_mezcl2">
@@ -557,6 +563,9 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
   </widget>
   <widget class="QSpinBox" name="max_mezcl3">
    <property name="geometry">
@@ -566,6 +575,9 @@
      <width>42</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
    </property>
   </widget>
   <widget class="QSpinBox" name="max_cinta_mezcla">
@@ -577,6 +589,9 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
   </widget>
   <widget class="QSpinBox" name="max_cinta_horno">
    <property name="geometry">
@@ -586,6 +601,9 @@
      <width>42</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
    </property>
   </widget>
   <widget class="QSpinBox" name="max_empacadora">
@@ -597,6 +615,9 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
   </widget>
   <widget class="QSpinBox" name="max_cinta_choco">
    <property name="geometry">
@@ -606,6 +627,9 @@
      <width>42</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
    </property>
   </widget>
   <widget class="QSpinBox" name="max_horno1">
@@ -617,6 +641,9 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
   </widget>
   <widget class="QSpinBox" name="max_empack">
    <property name="geometry">
@@ -626,6 +653,9 @@
      <width>42</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
    </property>
   </widget>
   <widget class="QSpinBox" name="max_horno6">
@@ -637,6 +667,9 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
   </widget>
   <widget class="QSpinBox" name="max_horno4">
    <property name="geometry">
@@ -646,6 +679,9 @@
      <width>42</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
    </property>
   </widget>
   <widget class="QSpinBox" name="max_horno5">
@@ -657,6 +693,9 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
   </widget>
   <widget class="QSpinBox" name="max_horno3">
    <property name="geometry">
@@ -666,6 +705,9 @@
      <width>42</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
    </property>
   </widget>
   <widget class="QSpinBox" name="max_control_calidad">
@@ -677,6 +719,9 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
   </widget>
   <widget class="QSpinBox" name="max_horno2">
    <property name="geometry">
@@ -686,6 +731,9 @@
      <width>42</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
    </property>
   </widget>
   <widget class="QSpinBox" name="max_camion_pak10">
@@ -697,6 +745,9 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
   </widget>
   <widget class="QSpinBox" name="max_camion_pack16">
    <property name="geometry">
@@ -707,6 +758,9 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
   </widget>
   <widget class="QSpinBox" name="max_camion_pack4">
    <property name="geometry">
@@ -716,6 +770,9 @@
      <width>42</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
    </property>
   </widget>
   <widget class="QLabel" name="label_39">
@@ -786,6 +843,9 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
   </widget>
   <widget class="QSpinBox" name="gramos_mezcl3">
    <property name="geometry">
@@ -795,6 +855,9 @@
      <width>42</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
    </property>
   </widget>
   <widget class="QSpinBox" name="gramos_mezcl2">
@@ -806,6 +869,9 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
   </widget>
   <widget class="QSpinBox" name="tiempo_mezcl3">
    <property name="geometry">
@@ -815,6 +881,9 @@
      <width>42</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
    </property>
   </widget>
   <widget class="QSpinBox" name="tiempo_mezcl1">
@@ -826,6 +895,9 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
   </widget>
   <widget class="QSpinBox" name="tiempo_mezcl2">
    <property name="geometry">
@@ -835,6 +907,9 @@
      <width>42</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
    </property>
   </widget>
   <widget class="QLabel" name="label_43">
@@ -885,6 +960,9 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
   </widget>
   <widget class="QLabel" name="label_46">
    <property name="geometry">
@@ -907,6 +985,9 @@
      <width>42</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
    </property>
   </widget>
   <widget class="QLabel" name="label_49">
@@ -944,6 +1025,9 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
   </widget>
   <widget class="QLabel" name="label_52">
    <property name="geometry">
@@ -980,6 +1064,9 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
   </widget>
   <widget class="QSpinBox" name="tiempo_horno4">
    <property name="geometry">
@@ -990,6 +1077,9 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
   </widget>
   <widget class="QSpinBox" name="tiempo_horno5">
    <property name="geometry">
@@ -999,6 +1089,9 @@
      <width>42</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
    </property>
   </widget>
   <widget class="QLabel" name="label_56">
@@ -1101,6 +1194,9 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
   </widget>
   <widget class="QLabel" name="label_47">
    <property name="geometry">
@@ -1136,6 +1232,9 @@
      <width>42</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
    </property>
   </widget>
   <widget class="QLabel" name="label_63">
@@ -1199,6 +1298,9 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
   </widget>
   <widget class="QLabel" name="label_55">
    <property name="geometry">
@@ -1222,6 +1324,9 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
   </widget>
   <widget class="QLabel" name="label_66">
    <property name="geometry">
@@ -1244,6 +1349,9 @@
      <width>42</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
    </property>
   </widget>
   <widget class="QLabel" name="label_67">
@@ -1350,6 +1458,9 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="maximum">
+    <number>100</number>
+   </property>
   </widget>
   <widget class="QSpinBox" name="prob_inspec_1">
    <property name="geometry">
@@ -1359,6 +1470,9 @@
      <width>41</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="maximum">
+    <number>100</number>
    </property>
   </widget>
  </widget>
