@@ -259,3 +259,13 @@ void MainWindow::on_btnHorno_4_clicked()
 {
     hornoThread->horno6->encendido = !hornoThread->horno6->encendido;
 }
+
+void MainWindow::on_btnCalidad1_clicked()
+{
+    controlCalidad->inspec_1->detenerse = !controlCalidad->inspec_1->detenerse;
+}
+
+void MainWindow::on_btnCalidad2_clicked()
+{
+    controlCalidad->inspec_2->detenerse = !controlCalidad->inspec_2->detenerse;
+}

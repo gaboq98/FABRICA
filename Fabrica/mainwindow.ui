@@ -1491,37 +1491,6 @@ background-repeat: none;</string>
      <number>100000</number>
     </property>
    </widget>
-   <widget class="QSpinBox" name="total">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>980</x>
-      <y>320</y>
-      <width>41</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: transparent;
-background: none;
-border: none;
-background-repeat: none;</string>
-    </property>
-    <property name="readOnly">
-     <bool>true</bool>
-    </property>
-    <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::NoButtons</enum>
-    </property>
-    <property name="keyboardTracking">
-     <bool>true</bool>
-    </property>
-    <property name="maximum">
-     <number>100000</number>
-    </property>
-   </widget>
    <zorder>btnReiniciar</zorder>
    <zorder>btnInicio</zorder>
    <zorder>btnPausa</zorder>
@@ -1570,7 +1539,6 @@ background-repeat: none;</string>
    <zorder>btnEnsambladora</zorder>
    <zorder>btnCalidad1</zorder>
    <zorder>btnEmpacadora</zorder>
-   <zorder>btnCalidad2</zorder>
    <zorder>btnHorno_2</zorder>
    <zorder>btnHorno_3</zorder>
    <zorder>btnHorno_4</zorder>
@@ -1582,7 +1550,7 @@ background-repeat: none;</string>
    <zorder>horno5_total</zorder>
    <zorder>horno4_total</zorder>
    <zorder>horno6_total</zorder>
-   <zorder>total</zorder>
+   <zorder>btnCalidad2</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
