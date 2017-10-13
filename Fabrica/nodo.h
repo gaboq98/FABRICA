@@ -1,16 +1,15 @@
 #ifndef NODO_H
 #define NODO_H
-#include <QApplication>
 
 
 struct Nodo
 {
-    QString tipo;
+    int paquete;
     int cantidad;
-    int destino;
-    Nodo* siguiente;
+    Nodo *siguiente;
+    Nodo *anterior;
     Nodo();
-    Nodo(int _cantidad,int _destino);
+    Nodo(int pack, int cant);
 };
 
 #endif // NODO_H

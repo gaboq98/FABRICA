@@ -2,11 +2,12 @@
 
 Nodo::Nodo()
 {
-
+    siguiente = anterior = nullptr;
 }
 
-Nodo::Nodo(int _cantidad,int _destino){
-    cantidad = _cantidad;
-    destino = _destino;
-    siguiente = NULL;
+Nodo::Nodo(int pack, int cant)
+{
+    paquete = pack;
+    cantidad = cant;
+    siguiente = anterior = nullptr;
 }
