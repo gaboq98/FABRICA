@@ -6,6 +6,7 @@ Configuracion::Configuracion(QWidget *parent) :
     ui(new Ui::Configuracion)
 {
     ui->setupUi(this);
+
 }
 
 Configuracion::~Configuracion()

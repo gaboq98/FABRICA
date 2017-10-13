@@ -5,6 +5,7 @@
 #include "ensambladorathread.h"
 #include "hornothread.h"
 #include "controlcalidadthread.h"
+#include "configuracion.h"
 
 namespace Ui {
 class MainWindow;
@@ -17,6 +18,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    Configuracion *config;
     int bandaMasa;
     int bandaChocolate;
     int bandaHorno;
