@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    config = new Configuracion;
 
     bandaMasa = 0;
     bandaChocolate = 0;
@@ -14,6 +15,8 @@ MainWindow::MainWindow(QWidget *parent) :
     mezcladora1 = new MezcladoraMasa();
     mezcladora2 = new MezcladoraMasa();
     mezcladora3 = new MezcladoraMasa();
+
+    //config->ui->max_mezcl1;
 
     mezcladora1->maximo = 1000;
     mezcladora1->minimo = 30;

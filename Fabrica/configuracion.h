@@ -15,7 +15,6 @@ public:
     explicit Configuracion(QWidget *parent = 0);
     ~Configuracion();
 
-private:
     Ui::Configuracion *ui;
 };
 
