@@ -1535,16 +1535,11 @@
    <property name="maximum">
     <number>100</number>
    </property>
-<<<<<<< HEAD
-   <property name="value">
-    <number>50</number>
-=======
    <property name="singleStep">
     <number>1</number>
    </property>
    <property name="value">
     <number>42</number>
->>>>>>> 9297d953c8966079e6a53cd12bdf016df4a5ac92
    </property>
   </widget>
  </widget>
