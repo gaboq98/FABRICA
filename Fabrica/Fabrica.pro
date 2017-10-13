@@ -27,7 +27,6 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     almacen.cpp \
-    nodo.cpp \
     mezcladorachocolate.cpp \
     mezcladoramasa.cpp \
     cola.cpp \
@@ -43,12 +42,13 @@ SOURCES += \
     empacadora.cpp \
     controlcalidadthread.cpp \
     empacadorathread.cpp \
-    hornothread.cpp
+    hornothread.cpp \
+    listacircular.cpp \
+    nodo.cpp
 
 HEADERS += \
         mainwindow.h \
     almacen.h \
-    nodo.h \
     mezcladorachocolate.h \
     mezcladoramasa.h \
     cola.h \
@@ -64,7 +64,9 @@ HEADERS += \
     empacadora.h \
     controlcalidadthread.h \
     empacadorathread.h \
-    hornothread.h
+    hornothread.h \
+    listacircular.h \
+    nodo.h
 
 FORMS += \
         mainwindow.ui \

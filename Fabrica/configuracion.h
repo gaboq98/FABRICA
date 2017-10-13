@@ -5,6 +5,7 @@
 #include "ensambladorathread.h"
 #include "hornothread.h"
 #include "controlcalidadthread.h"
+#include "listacircular.h"
 
 namespace Ui {
 class Configuracion;
@@ -60,6 +61,10 @@ public:
 
     int *porcentajeInspector2;
 
+    ListaCircular* lista;
+
+private slots:
+    void on_pushButton_clicked();
 };
 
 #endif // CONFIGURACION_H

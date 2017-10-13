@@ -43,4 +43,13 @@ Configuracion::Configuracion(MezcladoraMasa *m1, MezcladoraMasa *m2, MezcladoraM
     c1->inspec_1->porcentaje = ui->prob_inspec_1->value();
     c1->inspec_2->porcentaje = ui->prob_inspec_2->value();
 
+    lista = new ListaCircular();
+
+}
+
+void Configuracion::on_pushButton_clicked()
+{
+    lista->insertar( ui->cantidad_por_paquete, ui->cantidad_de_paquetes);
+    QString str = ui->cantidad_de_paquetes + " paquetes de " + ui->cantidad_por_paquete + "\n";
+    ui->lista_de_paquetes->appendPlainText(str);
 }
