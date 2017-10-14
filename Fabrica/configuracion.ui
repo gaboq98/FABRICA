@@ -152,6 +152,12 @@ background-repeat: none;</string>
      <height>16</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: transparent;
+background: none;
+border: none;
+background-repeat: none;</string>
+   </property>
    <property name="text">
     <string>Cinta Horno</string>
    </property>
@@ -224,7 +230,10 @@ background-repeat: none;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color: transparent;
+background: none;
+border: none;
+background-repeat: none;</string>
    </property>
    <property name="text">
     <string>Cinta Chocolate</string>
@@ -725,7 +734,7 @@ background-repeat: none;</string>
     <number>10000</number>
    </property>
    <property name="value">
-    <number>30</number>
+    <number>10</number>
    </property>
   </widget>
   <widget class="QSpinBox" name="max_empack">
@@ -1844,6 +1853,9 @@ background-repeat: none;</string>
 background: none;
 border: none;
 background-repeat: none;</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_2">

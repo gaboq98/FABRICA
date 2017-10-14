@@ -16,6 +16,7 @@ public:
 
 signals:
     void entregaGalletas(int);
+    void maxCamion(int);
 
 };
 

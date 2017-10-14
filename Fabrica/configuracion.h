@@ -35,6 +35,9 @@ public:
 
     ListaCircular* lista;
 
+signals:
+    void actualizarLista(ListaCircular *l);
+
 private slots:
     void on_pushButton_clicked();
 

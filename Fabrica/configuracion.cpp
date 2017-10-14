@@ -61,6 +61,7 @@ void Configuracion::asignarValores(MezcladoraMasa *m1, MezcladoraMasa *m2, Mezcl
 
 }
 
+
 void Configuracion::on_pushButton_clicked()
 {
     Camion *camion = new Camion();
@@ -68,7 +69,7 @@ void Configuracion::on_pushButton_clicked()
     thread->start();
     camion->maximo = ui->max_camion_entrega->value();
     camion->tiempo = ui->tiempo_camion->value();
-    lista->insertar(ui->cantidad_por_paquete->value(), ui->cantidad_de_paquetes->value(), camion);
+    lista->insertar(ui->cantidad_por_paquete->value(), ui->cantidad_de_paquetes->value(), ui->probabilidad_paquete->value(), camion);
     QString str = QString::number(ui->cantidad_de_paquetes->value()) + " paquetes de " + QString::number(ui->cantidad_por_paquete->value());
     ui->lista_de_paquetes->appendPlainText(str);
     ui->probabilidad_paquete->setMaximum(ui->probabilidad_paquete->maximum() - ui->probabilidad_paquete->value());
@@ -78,5 +79,7 @@ void Configuracion::on_pushButton_clicked()
 
 void Configuracion::on_pushButton_2_clicked()
 {
+    qDebug() << lista->imprimir();
+    emit actualizarLista(lista);
     this->setVisible(false);
 }

@@ -19,7 +19,7 @@ void EmpacadoraThread::run()
         if(detenerse) {
             sleep(0.5);
         } else {
-            qDebug() << "hello";
+            empacadora->empaca();
             emit enviarPaquete(empacadora->totalpack, empacadora->lista);
             sleep(1);
         }
