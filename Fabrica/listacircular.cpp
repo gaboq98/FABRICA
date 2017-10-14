@@ -11,7 +11,7 @@ ListaCircular::ListaCircular()
 //DESCRIPCION: inserta en la lista un nuevo nodo con el pedido de
 //              la galleta y cantidad
 //SALIDA: void
-void ListaCircular::insertar(int pack, int cant, int prob, Camion *c)
+void ListaCircular::insertar(int pack, int cant, int prob, CamionThread *c)
 {
     if(pn == nullptr){
         pn = un = new Nodo(pack,cant,prob, c);

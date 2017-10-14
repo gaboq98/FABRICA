@@ -18,6 +18,11 @@ public:
 
 signals:
     void enviarPaquete(QVector<int> v, ListaCircular *l);
+    void enviarCarrito(int);
+
+public slots:
+    void carritoMax(int);
+
 
 };
 

@@ -55,6 +55,8 @@ public slots:
     void hornosTotal(int, int, int, int, int, int);
     void recibirPaquete(QVector<int>, ListaCircular *l);
     void recibeLista(ListaCircular *l);
+    void carritoMax();
+    void carritoActual(int);
 
 private slots:
     void on_btnInicio_clicked();

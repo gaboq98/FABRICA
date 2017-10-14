@@ -24,7 +24,7 @@ int Empacadora::empaca()
         if(num <= acumulador){
             result = lista->obtener(i)->paquete;
             if(*banda > result){
-                lista->obtener(i)->camion->actual++;
+                lista->obtener(i)->camion->camion->actual++;
                 totalpack[i]++;
                 *banda -= result;
                 break;

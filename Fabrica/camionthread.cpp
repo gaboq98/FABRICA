@@ -29,7 +29,8 @@ void CamionThread::run()
         if(camion->actual >= camion->maximo) {
             sleep(camion->tiempo);
             emit entregaGalletas(camion->entregar());
-            emit maxCamion(camion->actual);
+            qDebug() << "corre";
+            //emit maxCamion(camion);
         }
         sleep(0.5);
     }

@@ -67,6 +67,11 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(config, SIGNAL(actualizarLista(ListaCircular*)), this, SLOT(recibeLista(ListaCircular*)));
     connect(empacadoraThread, SIGNAL(enviarPaquete(QVector<int>,ListaCircular*)), this, SLOT(recibirPaquete(QVector<int>,ListaCircular*)));
 
+    for(int i = 0; i < config->lista->length; i++) {
+        connect(config->lista->obtener(i)->camion, SIGNAL(entregaGalletas(int)), this, SLOT(carritoActual(int)));
+        connect(config->lista->obtener(i)->camion, SIGNAL(maxCamion(int)), this, SLOT(carritoMax(int)));
+    }
+
 }
 
 
@@ -220,6 +225,7 @@ void MainWindow::hornosTotal(int h1, int h2, int h3, int h4, int h5, int h6)
 //SALIDA: void
 void MainWindow::recibirPaquete(QVector<int> vector, ListaCircular *lista)
 {
+
     ui->empacador->document()->setPlainText("");
     for(int i = 0; i < vector.size(); i++) {
         ui->empacador->appendPlainText(QString(QString::number(vector[i]) + " paquetes de " + QString::number(lista->obtener(i)->paquete) + " galletas"));
@@ -231,13 +237,24 @@ void MainWindow::recibeLista(ListaCircular*l)
     empacadora->set_lista(l);
 }
 
+void MainWindow::carritoMax()
+{
+    qDebug() << "emit";
+    ui->max_camion->setValue(empacadora->lista->obtener(1)->camion->camion->maximo);
+    ui->actual_camion->setValue(empacadora->lista->obtener(1)->camion->camion->actual);
+}
+
+void MainWindow::carritoActual(int num)
+{
+
+}
+
 //ENTRADAS:
 //DESCRIPCION: enciende todas las maquinas
 //SALIDA: void
 void MainWindow::on_btnInicio_clicked()
 {
     config->asignarValores(mezcladora1, mezcladora2, mezcladora3, ensambladora, hornoThread, controlCalidad, empacadora);
-    //empacadora->set_lista(config->lista);
     mezcladoraThread1->start();
     mezcladoraThread1->detenerse = false;
 

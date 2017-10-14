@@ -9,7 +9,7 @@ Nodo::Nodo()
 
 //ENTRADAS: dantidad de paquetes, numero de paquetes a crear, camion c
 //DESCRIPCION: constructor con parametros donde asigna valores
-Nodo::Nodo(int pack, int cant, int prob, Camion *c)
+Nodo::Nodo(int pack, int cant, int prob, CamionThread *c)
 {
     paquete = pack;
     cantidad = cant;

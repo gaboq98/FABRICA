@@ -45,8 +45,8 @@ void Configuracion::asignarValores(MezcladoraMasa *m1, MezcladoraMasa *m2, Mezcl
     mezcladora3->minimo = 10;
 
     ensambladora->gps = ui->galletas_ensam->value() / ui->tiempo_ensam->value();
-    ensambladora->mpg = 8;
-    ensambladora->cpg = 2;
+    ensambladora->mpg = ui->masa_galleta->value();
+    ensambladora->cpg = ui->choco_galleta->value();
 
     horno->horno1->maximo = ui->max_horno1->value();
     horno->horno2->maximo = ui->max_horno2->value();
@@ -79,9 +79,10 @@ void Configuracion::on_pushButton_clicked()
     Camion *camion = new Camion();
     CamionThread *thread = new CamionThread(camion);
     thread->start();
+    //connect(config->lista->obtener(i)->camion, SIGNAL(maxCamion(int)), empacadora, SLOT(carritoMax(int)));
     camion->maximo = ui->max_camion_entrega->value();
     camion->tiempo = ui->tiempo_camion->value();
-    lista->insertar(ui->cantidad_por_paquete->value(), ui->cantidad_de_paquetes->value(), ui->probabilidad_paquete->value(), camion);
+    lista->insertar(ui->cantidad_por_paquete->value(), ui->cantidad_de_paquetes->value(), ui->probabilidad_paquete->value(), thread);
     QString str = QString::number(ui->cantidad_de_paquetes->value()) + " paquetes de " + QString::number(ui->cantidad_por_paquete->value());
     ui->lista_de_paquetes->appendPlainText(str);
     ui->probabilidad_paquete->setMaximum(ui->probabilidad_paquete->maximum() - ui->probabilidad_paquete->value());

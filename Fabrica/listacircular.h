@@ -10,7 +10,7 @@ struct ListaCircular
     Nodo *un;
     int length;
     ListaCircular();
-    void insertar(int pack, int cant, int prob, Camion *c);
+    void insertar(int pack, int cant, int prob, CamionThread *c);
     Nodo* obtener(int index);
     QString imprimir();
 };

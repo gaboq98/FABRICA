@@ -32,3 +32,7 @@ void EmpacadoraThread::run()
         }
     }
 }
+
+void EmpacadoraThread::carritoMax(int)
+{
+}

@@ -11,7 +11,7 @@ Camion::Camion()
 //ENTRADAS:
 //DESCRIPCION: funcion que entrega la carga a su destino
 //             su actual vuelve a ser cero
-//SALIDAS:
+//SALIDAS: el maximo del camion
 int Camion::entregar()
 {
     actual = 0;
