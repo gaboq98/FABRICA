@@ -1,10 +1,17 @@
 #include "empacadora.h"
 
+//DESCRIPCION: constructore de la empacadora
 Empacadora::Empacadora()
 {
     banda = nullptr;
 }
 
+
+//ENTRADA:
+//DESCRIPCION: genera un numero random con el cual busca
+//             cual paquete coresponde con el numero,
+//             aumenta la cantidad de paquetes dl camion
+//SALIDA: void
 void Empacadora::empaca()
 {
     int num = rand() % 100;
