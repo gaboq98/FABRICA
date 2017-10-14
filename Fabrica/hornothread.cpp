@@ -43,3 +43,10 @@ void HornoThread::run()
         }
     }
 }
+
+void HornoThread::reset()
+{
+    for(int i = 0; i < 6;i++){
+        hornos[i]->reset();
+    }
+}

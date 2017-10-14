@@ -74,6 +74,8 @@ private slots:
     void on_btn_config_clicked();
     void on_btnEmpacadora_clicked();
 
+    void on_btnReiniciar_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

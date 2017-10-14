@@ -401,3 +401,27 @@ void MainWindow::on_btnEmpacadora_clicked()
 {
     empacadoraThread->detenerse = !empacadoraThread->detenerse;
 }
+
+void MainWindow::on_btnReiniciar_clicked()
+{
+    on_btnPausa_clicked();
+    MainWindow();
+    cambiandoMezcladora1(0);
+    cambiandoMezcladora2(0);
+    cambiandoMezcladora3(0);
+    cambiarBanda1(0);
+    cambiarBanda2(0);
+    bandaMasa = 0;
+    bandaChocolate = 0;
+    bandaHorno = 0;
+    ensambladora->procesado = 0;
+    hornoThread->reset();
+    ponerBanda();
+    hornosActual(0,0,0,0,0,0);
+    hornosTotal(0,0,0,0,0,0);
+    cambiarAprobado1(0);
+    cambiarAprobado2(0);
+    cambiarBandaHorno(0);
+    cambiarRechazado1(0);
+    cambiarRechazado2(0);
+}

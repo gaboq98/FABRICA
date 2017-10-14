@@ -20,6 +20,7 @@ public:
     bool detenerse;
     int *galletas;
     int galletasCocinadas;
+    void reset();
 
 signals:
     void cambiarHornos(int, int, int, int, int, int);
