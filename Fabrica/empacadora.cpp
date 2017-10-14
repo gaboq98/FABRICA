@@ -1,9 +1,15 @@
 #include "empacadora.h"
 
+//DESCRIPCION: constructor de la empacadora
 Empacadora::Empacadora()
 {
     //banda = nullptr;
 }
+
+//DESCRIPCION: genera un numero random con el cual busca
+//             cual paquete coresponde con el numero,
+//             aumenta la cantidad de paquetes del camion
+//SALIDA: int del paquete actual empacado
 
 int Empacadora::empaca()
 {
@@ -28,6 +34,11 @@ int Empacadora::empaca()
     return result;
 }
 
+
+//ENTRADAS: puntero a lista circular de la empacadora
+//DESCRIPCION: asigna la lista de la empacadora y asigna
+//             el tamaño del arreglo de las cantidades totales
+//             por tipo de galleta.
 void Empacadora::set_lista(ListaCircular* l)
 {
     lista = l;

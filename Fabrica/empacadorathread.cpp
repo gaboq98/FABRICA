@@ -1,11 +1,14 @@
 #include "empacadorathread.h"
 
+//DESCRIPCION: constructor deempacadora
 EmpacadoraThread::EmpacadoraThread()
 {
     encendido = true;
     detenerse = false;
 }
 
+//ENTRADAS: puntero a empacadora
+//DESCRIPCION: constructor de control con
 EmpacadoraThread::EmpacadoraThread(Empacadora* e)
 {
     encendido = true;
@@ -13,6 +16,10 @@ EmpacadoraThread::EmpacadoraThread(Empacadora* e)
     empacadora = e;
 }
 
+
+//DESCRIPCION: metodo run del hilo, cuando el hilo este encendido
+//             emite el valor de las cantidates totales y tipos de
+//             cada tipo diferente de galleta
 void EmpacadoraThread::run()
 {
     while (encendido) {

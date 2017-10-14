@@ -2,6 +2,8 @@
 #include <QtCore>
 #include <QDebug>
 
+
+//DESCRIPCION: constructor de hilo principal
 MainThread::MainThread(QObject *parent) : QThread(parent)
 {
     this->encendido = true;

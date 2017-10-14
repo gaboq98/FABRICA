@@ -1,6 +1,8 @@
 #include "configuracion.h"
 #include "ui_configuracion.h"
 
+
+//DESCRIPCION: contructor de configuracion
 Configuracion::Configuracion(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Configuracion)
@@ -10,11 +12,17 @@ Configuracion::Configuracion(QWidget *parent) :
 
 }
 
+//DESCRIPCION: deconstructor de la clase configuracion
 Configuracion::~Configuracion()
 {
     delete ui;
 }
 
+//ENTRADAS: puntero a mezcladora 1, puntero a mezcladora 2, puntero a mezcladora chocolate
+//          puntero a ensambladora de galletas, puntero a hornos,
+//          puntero a cinta de control de calidad, puntero a empacadora
+//
+//DESCRIPCION: funcion asigna los parametros de las de las estructuras adignados en la configuracion
 void Configuracion::asignarValores(MezcladoraMasa *m1, MezcladoraMasa *m2, MezcladoraMasa *m3, Ensambladora *e,
                                    HornoThread *hornos, ControlCalidad *c1, Empacadora *emp)
 {
@@ -62,6 +70,10 @@ void Configuracion::asignarValores(MezcladoraMasa *m1, MezcladoraMasa *m2, Mezcl
 }
 
 
+
+//DESCRIPCION: funcion que agrega un elemento en la lista de galletas,
+//             obtiene los valores de la configuracion y agrega el string a
+//             area de texto, tambien, se setea el valor maximo de la probabilidad por paquete
 void Configuracion::on_pushButton_clicked()
 {
     Camion *camion = new Camion();
@@ -77,6 +89,7 @@ void Configuracion::on_pushButton_clicked()
         ui->pushButton->setEnabled(false);
 }
 
+//DESCRIPCION: funcion del boton guardar, cierra la ventana de configuracion
 void Configuracion::on_pushButton_2_clicked()
 {
     qDebug() << lista->imprimir();
