@@ -6,6 +6,7 @@
 #include "hornothread.h"
 #include "controlcalidadthread.h"
 #include "configuracion.h"
+#include "empacadorathread.h"
 
 namespace Ui {
 class MainWindow;
@@ -33,6 +34,8 @@ public:
     HornoThread *hornoThread;
     ControlCalidad *controlCalidad;
     ControlCalidadThread *controlThread;
+    Empacadora *empacadora;
+    EmpacadoraThread *empacadoraThread;
 
 
 public slots:
@@ -65,6 +68,8 @@ private slots:
     void on_btnHorno_4_clicked();
     void on_btnCalidad1_clicked();
     void on_btnCalidad2_clicked();
+
+    void on_btn_config_clicked();
 
 private:
     Ui::MainWindow *ui;

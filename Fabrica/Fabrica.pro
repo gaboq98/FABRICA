@@ -29,7 +29,6 @@ SOURCES += \
     almacen.cpp \
     mezcladorachocolate.cpp \
     mezcladoramasa.cpp \
-    cola.cpp \
     almacenfinal.cpp \
     horno.cpp \
     configuracion.cpp \
@@ -51,7 +50,6 @@ HEADERS += \
     almacen.h \
     mezcladorachocolate.h \
     mezcladoramasa.h \
-    cola.h \
     almacenfinal.h \
     horno.h \
     configuracion.h \

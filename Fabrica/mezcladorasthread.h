@@ -3,7 +3,6 @@
 #include <QtCore>
 #include "QDebug"
 #include "mezcladoramasa.h"
-#include "cola.h"
 
 class MezcladorasThread : public QThread
 {

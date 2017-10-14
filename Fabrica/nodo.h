@@ -6,6 +6,7 @@ struct Nodo
 {
     int paquete;
     int cantidad;
+    int probabilidad;
     Nodo *siguiente;
     Nodo *anterior;
     Nodo();

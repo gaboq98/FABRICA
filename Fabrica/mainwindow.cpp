@@ -56,8 +56,13 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(controlThread, SIGNAL( entregaRech1(int)), this, SLOT(cambiarRechazado1(int)));
     connect(controlThread, SIGNAL( entregaRech2(int)), this, SLOT(cambiarRechazado2(int)));
 
+    empacadora = new Empacadora;
+    empacadora->banda = &controlCalidad->salida;
+
+    empacadoraThread = new EmpacadoraThread(empacadora);
+
     config = new Configuracion(this);
-    config->asignarValores(mezcladora1, mezcladora2, mezcladora3, ensambladora, hornoThread, controlCalidad);
+    config->asignarValores(mezcladora1, mezcladora2, mezcladora3, ensambladora, hornoThread, controlCalidad, empacadora);
 
 }
 
@@ -238,4 +243,9 @@ void MainWindow::on_btnCalidad1_clicked()
 void MainWindow::on_btnCalidad2_clicked()
 {
     controlCalidad->inspec_2->detenerse = !controlCalidad->inspec_2->detenerse;
+}
+
+void MainWindow::on_btn_config_clicked()
+{
+    config->setVisible(true);
 }

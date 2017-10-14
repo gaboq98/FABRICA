@@ -271,7 +271,7 @@ background-repeat: none;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="btn_config">
     <property name="geometry">
      <rect>
       <x>320</x>
@@ -1504,7 +1504,7 @@ background-repeat: none;</string>
    <zorder>almacenLbl</zorder>
    <zorder>label_5</zorder>
    <zorder>lblcontrolCalidad</zorder>
-   <zorder>pushButton</zorder>
+   <zorder>btn_config</zorder>
    <zorder>lblempacadora</zorder>
    <zorder>label_4</zorder>
    <zorder>camionLbl_2</zorder>

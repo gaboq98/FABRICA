@@ -6,6 +6,7 @@
 #include "hornothread.h"
 #include "controlcalidadthread.h"
 #include "listacircular.h"
+#include "empacadora.h"
 
 namespace Ui {
 class Configuracion;
@@ -26,14 +27,17 @@ public:
     Ensambladora *ensambladora;
     HornoThread *horno;
     ControlCalidad *controlCalidad;
+    Empacadora *empacadora;
 
     void asignarValores(MezcladoraMasa *m1, MezcladoraMasa *m2, MezcladoraMasa *m3, Ensambladora *e,
-                        HornoThread *horno, ControlCalidad *c1);
+                        HornoThread *horno, ControlCalidad *c1, Empacadora *emp);
 
     ListaCircular* lista;
 
 private slots:
     void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
 };
 
 #endif // CONFIGURACION_H

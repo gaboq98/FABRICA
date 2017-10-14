@@ -6,6 +6,7 @@ Configuracion::Configuracion(QWidget *parent) :
     ui(new Ui::Configuracion)
 {
     ui->setupUi(this);
+    lista = new ListaCircular();
 
 }
 
@@ -14,7 +15,8 @@ Configuracion::~Configuracion()
     delete ui;
 }
 
-void Configuracion::asignarValores(MezcladoraMasa *m1, MezcladoraMasa *m2, MezcladoraMasa *m3, Ensambladora *e, HornoThread *hornos, ControlCalidad *c1)
+void Configuracion::asignarValores(MezcladoraMasa *m1, MezcladoraMasa *m2, MezcladoraMasa *m3, Ensambladora *e,
+                                   HornoThread *hornos, ControlCalidad *c1, Empacadora *emp)
 {
     mezcladora1 = m1;
     mezcladora2 = m2;
@@ -22,6 +24,7 @@ void Configuracion::asignarValores(MezcladoraMasa *m1, MezcladoraMasa *m2, Mezcl
     ensambladora = e;
     horno = hornos;
     controlCalidad = c1;
+    empacadora = emp;
 
     mezcladora1->maximo = ui->max_mezcl1->value();
     mezcladora1->ups = ui->gramos_mezcl1->value() / ui->tiempo_mezcl1->value();
@@ -53,16 +56,20 @@ void Configuracion::asignarValores(MezcladoraMasa *m1, MezcladoraMasa *m2, Mezcl
 
     controlCalidad->inspec_1->porcentaje = ui->prob_inspec_1->value();
     controlCalidad->inspec_2->porcentaje = ui->prob_inspec_2->value();
-    qDebug() << "Asignar valores";
 
-    lista = new ListaCircular();
+    empacadora->lista = lista;
 
 }
 
 void Configuracion::on_pushButton_clicked()
 {
-    lista->insertar( ui->cantidad_por_paquete, ui->cantidad_de_paquetes);
-    QString str = ui->cantidad_de_paquetes + " paquetes de " + ui->cantidad_por_paquete + "\n";
+    lista->insertar(ui->cantidad_por_paquete->value(), ui->cantidad_de_paquetes->value());
+    QString str = QString::number(ui->cantidad_de_paquetes->value()) + " paquetes de " + QString::number(ui->cantidad_por_paquete->value());
     ui->lista_de_paquetes->appendPlainText(str);
+    ui->probabilidad_paquete->setMaximum(ui->probabilidad_paquete->maximum() - ui->probabilidad_paquete->value());
 }
 
+void Configuracion::on_pushButton_2_clicked()
+{
+    this->setVisible(false);
+}
