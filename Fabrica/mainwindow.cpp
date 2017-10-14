@@ -61,8 +61,12 @@ MainWindow::MainWindow(QWidget *parent) :
 
     empacadoraThread = new EmpacadoraThread(empacadora);
 
+    connect(empacadoraThread, SIGNAL(enviarPaquete(QVector<int>,ListaCircular*)), this, SLOT(recibirPaquete(QVector<int>,ListaCircular*)));
+
     config = new Configuracion(this);
     config->asignarValores(mezcladora1, mezcladora2, mezcladora3, ensambladora, hornoThread, controlCalidad, empacadora);
+
+    empacadora->set_lista(config->lista);
 
 }
 
@@ -78,6 +82,8 @@ MainWindow::~MainWindow()
     ensambladoraThread->wait();
     hornoThread->encendido = false;
     hornoThread->wait();
+    empacadoraThread->encendido = false;
+    empacadoraThread->wait();
     delete ui;
 }
 
@@ -164,6 +170,14 @@ void MainWindow::hornosTotal(int h1, int h2, int h3, int h4, int h5, int h6)
     ui->horno6_total->setValue(h6);
 }
 
+void MainWindow::recibirPaquete(QVector<int> vector, ListaCircular *lista)
+{
+    qDebug() << "pee";
+    for(int i = 0; i < vector.size(); i++) {
+        ui->empacador->appendPlainText(QString(QString::number(i) + " por paquete de " + QString::number(lista->obtener(i)->paquete)));
+    }
+}
+
 void MainWindow::on_btnInicio_clicked()
 {
     mezcladoraThread1->start();
@@ -183,6 +197,10 @@ void MainWindow::on_btnInicio_clicked()
 
     controlThread->start();
     controlThread->detenerse = false;
+
+    empacadoraThread->start();
+    empacadoraThread->detenerse = false;
+
 }
 
 void MainWindow::on_btnPausa_clicked()
@@ -193,6 +211,7 @@ void MainWindow::on_btnPausa_clicked()
     ensambladoraThread->detenerse = true;
     hornoThread->detenerse = true;
     controlThread->detenerse = true;
+    empacadoraThread->detenerse = true;
 }
 
 void MainWindow::on_btnMezcladora1_clicked()
@@ -248,4 +267,9 @@ void MainWindow::on_btnCalidad2_clicked()
 void MainWindow::on_btn_config_clicked()
 {
     config->setVisible(true);
+}
+
+void MainWindow::on_btnEmpacadora_clicked()
+{
+    empacadoraThread->detenerse = !empacadoraThread->detenerse;
 }

@@ -17,7 +17,7 @@ public:
     Empacadora* empacadora;
 
 signals:
-    void enviarPaquete(int);
+    void enviarPaquete(QVector<int> v, ListaCircular *l);
 
 };
 

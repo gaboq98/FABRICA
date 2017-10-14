@@ -7,11 +7,12 @@
 struct Empacadora
 {
     int *banda;
-    QVector<int> tiposDePaquete;
+    QVector<int> totalpack;
     ListaCircular *lista;
     int tiempo;
     Empacadora();
-    void empaca();
+    int empaca();
+    void set_lista(ListaCircular* l);
 };
 
 #endif // EMPACADORA_H

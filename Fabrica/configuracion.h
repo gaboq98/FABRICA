@@ -7,6 +7,7 @@
 #include "controlcalidadthread.h"
 #include "listacircular.h"
 #include "empacadora.h"
+#include "camionthread.h"
 
 namespace Ui {
 class Configuracion;

@@ -75,10 +75,17 @@ void Configuracion::asignarValores(MezcladoraMasa *m1, MezcladoraMasa *m2, Mezcl
 //             area de texto, tambien, se setea el valor maximo de la probabilidad por paquete
 void Configuracion::on_pushButton_clicked()
 {
-    lista->insertar(ui->cantidad_por_paquete->value(), ui->cantidad_de_paquetes->value());
+    Camion *camion = new Camion();
+    CamionThread *thread = new CamionThread(camion);
+    thread->start();
+    camion->maximo = ui->max_camion_entrega->value();
+    camion->tiempo = ui->tiempo_camion->value();
+    lista->insertar(ui->cantidad_por_paquete->value(), ui->cantidad_de_paquetes->value(), camion);
     QString str = QString::number(ui->cantidad_de_paquetes->value()) + " paquetes de " + QString::number(ui->cantidad_por_paquete->value());
     ui->lista_de_paquetes->appendPlainText(str);
     ui->probabilidad_paquete->setMaximum(ui->probabilidad_paquete->maximum() - ui->probabilidad_paquete->value());
+    if(ui->probabilidad_paquete->maximum() == 0)
+        ui->pushButton->setEnabled(false);
 }
 
 //DESCRIPCION: funcion del boton guardar, cierra la ventana de configuracion

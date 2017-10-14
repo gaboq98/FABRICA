@@ -53,7 +53,7 @@ public slots:
     void cambiarRechazado2(int);
     void hornosActual(int, int, int, int, int, int);
     void hornosTotal(int, int, int, int, int, int);
-
+    void recibirPaquete(QVector<int>, ListaCircular *l);
 
 private slots:
     void on_btnInicio_clicked();
@@ -68,8 +68,8 @@ private slots:
     void on_btnHorno_4_clicked();
     void on_btnCalidad1_clicked();
     void on_btnCalidad2_clicked();
-
     void on_btn_config_clicked();
+    void on_btnEmpacadora_clicked();
 
 private:
     Ui::MainWindow *ui;

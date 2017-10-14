@@ -6,13 +6,13 @@ ListaCircular::ListaCircular()
     length = 0;
 }
 
-void ListaCircular::insertar(int pack, int cant)
+void ListaCircular::insertar(int pack, int cant, Camion *c)
 {
     if(pn == nullptr){
-        pn = un = new Nodo(pack,cant);
+        pn = un = new Nodo(pack,cant, c);
         pn->siguiente = un->anterior = pn;
     }else{
-        Nodo* newNodo = new Nodo(pack,cant);
+        Nodo* newNodo = new Nodo(pack,cant, c);
         un->siguiente = newNodo;
         newNodo->anterior = un;
         un = un->siguiente;

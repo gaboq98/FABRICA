@@ -26,6 +26,7 @@ void ControlCalidadThread::run()
         if(detenerse) {
             sleep(0.5);
         } else {
+            qDebug() << *controlC->banda;
             controlC->avanza();
             emit(entregaApr1(controlC->inspec_1->aprobado));
             emit(entregaApr2(controlC->inspec_2->aprobado));

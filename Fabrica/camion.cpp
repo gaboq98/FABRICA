@@ -1,23 +1,12 @@
 #include "camion.h"
 
-
 Camion::Camion()
 {
-    pedidos = new Cola();
-    encendido = true;
+    actual = maximo = tiempo = 0;
 }
 
-int Camion :: entregar(int maquina, int cantidad) {
-    if(encendido) {
-        return cantidad;
-    }
-
-}
-
-void Camion::recibirPedido(int maquina, int cantidad)
+int Camion::entregar()
 {
-    if(encendido) {
-        pedidos->encolar(cantidad, maquina);
-        qDebug() << "camion" << cantidad;
-    }
+    actual = 0;
+    return maximo;
 }
