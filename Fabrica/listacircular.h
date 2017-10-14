@@ -9,7 +9,7 @@ struct ListaCircular
     Nodo *un;
     int length;
     ListaCircular();
-    void insertar(int pack, int cant);
+    void insertar(int pack, int cant, Camion *c);
     Nodo* obtener(int index);
 };
 
