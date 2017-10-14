@@ -7,6 +7,7 @@ class CamionThread : public QThread
 {
     Q_OBJECT
 public:
+
     CamionThread();
     CamionThread(Camion *c);
     Camion *camion;

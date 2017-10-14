@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 #include <QDebug>
 
+
+//DESCRIPCION: constructor de la ventana principal
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -70,6 +72,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
 }
 
+
+//DESCRIPCION: deconstructor de la clase
 MainWindow::~MainWindow()
 {
     mezcladoraThread1->encendido = false;
@@ -87,36 +91,58 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+//ENTRADAS: numero entero
+//DESCRIPCION:cambia el valor de los gramos procesados
+//SALIDA: void
 void MainWindow::cambiandoMezcladora1(int num)
 {
     ui->mezcladora1->setValue(num);
 }
 
+//ENTRADAS: numero entero
+//DESCRIPCION:cambia el valor de los gramos procesados
+//SALIDA: void
 void MainWindow::cambiandoMezcladora2(int num)
 {
     ui->mezcladora2->setValue(num);
 }
 
+//ENTRADAS:numero entero
+//DESCRIPCION: cambia el valor de los gramos procesados
+//SALIDA:void
 void MainWindow::cambiandoMezcladora3(int num)
 {
     ui->mezcladora3->setValue(num);
 }
 
+//ENTRADAS: numero entero
+//DESCRIPCION: suma el valor de masa o  numero de paquetes
+//SALIDA: void
 void MainWindow::cambiarBanda1(int num)
 {
     bandaMasa += num;
 }
 
+//ENTRADAS:numero entero
+//DESCRIPCION: cambia el valor de la cinta de
+//SALIDA:void
 void MainWindow::cambiarBanda12(int num)
 {
     bandaMasa += num;
 }
 
+//ENTRADAS: numero entero
+//DESCRIPCION: suma el valor de masa o  numero de paquetes
+//SALIDA: void
 void MainWindow::cambiarBanda2(int num)
 {
     bandaChocolate += num;
 }
 
+//ENTRADAS: numero entero
+//DESCRIPCION: asigna el valor a representar en pantalla en la banda galletas
+//SALIDA: void
 void MainWindow::cambiarBandaHorno(int num)
 {
     bandaHorno += num;
@@ -124,32 +150,50 @@ void MainWindow::cambiarBandaHorno(int num)
     ui->ensambladora->setValue(ensambladora->procesado);
 }
 
+//ENTRADAS:
+//DESCRIPCION: asigna el valor de las bandas de mezclar
+//SALIDA: void
 void MainWindow::ponerBanda()
 {
     ui->cintaMezcla->setValue(bandaMasa);
     ui->cintaChoco->setValue(bandaChocolate);
 }
 
+//ENTRADAS: numero entero
+//DESCRIPCION: cambia el numero de galletas aprobadas en pantalla
+//SALIDA: void
 void MainWindow::cambiarAprobado1(int num)
 {
     ui->calida1_aprovados->setValue(num);
 }
 
+//ENTRADAS: numero entero
+//DESCRIPCION: cambia el numero de galletas aprobadas en pantalla
+//SALIDA: void
 void MainWindow::cambiarAprobado2(int num)
 {
     ui->calida2_aprovados->setValue(num);
 }
 
+//ENTRADAS: numero entero
+//DESCRIPCION: cambia el numero de galletas rechazadas en pantalla
+//SALIDA: void
 void MainWindow::cambiarRechazado1(int num)
 {
     ui->calida1_desechados->setValue(num);
 }
 
+//ENTRADAS: numero entero
+//DESCRIPCION: cambia el numero de galletas rechazadas en pantalla
+//SALIDA: void
 void MainWindow::cambiarRechazado2(int num)
 {
     ui->calida2_desechados->setValue(num);
 }
 
+//ENTRADAS: actual de (horno1, horno2, horno3, horno4, horno4, horno5, horno 6)
+//DESCRIPCION: asigna el valor de los actuales de cada horno
+//SALIDA: void
 void MainWindow::hornosActual(int h1, int h2, int h3, int h4, int h5, int h6)
 {
     ui->horno_1->setValue(h1);
@@ -160,6 +204,10 @@ void MainWindow::hornosActual(int h1, int h2, int h3, int h4, int h5, int h6)
     ui->horno_6->setValue(h6);
 }
 
+
+//ENTRADAS: total de (horno1, horno2, horno3, horno4, horno4, horno5, horno 6)
+//DESCRIPCION: asigna el valor de los total de cada horno
+//SALIDA: void
 void MainWindow::hornosTotal(int h1, int h2, int h3, int h4, int h5, int h6)
 {
     ui->horno1_total->setValue(h1);
@@ -170,6 +218,9 @@ void MainWindow::hornosTotal(int h1, int h2, int h3, int h4, int h5, int h6)
     ui->horno6_total->setValue(h6);
 }
 
+//ENTRADAS: array de total de empacados, listacircular
+//DESCRIPCION: recibe array con la cantodad total de galletas y la imprime en pantalla
+//SALIDA: void
 void MainWindow::recibirPaquete(QVector<int> vector, ListaCircular *lista)
 {
     qDebug() << "pee";
@@ -178,6 +229,9 @@ void MainWindow::recibirPaquete(QVector<int> vector, ListaCircular *lista)
     }
 }
 
+//ENTRADAS:
+//DESCRIPCION: enciende todas las maquinas
+//SALIDA: void
 void MainWindow::on_btnInicio_clicked()
 {
     mezcladoraThread1->start();
@@ -203,6 +257,9 @@ void MainWindow::on_btnInicio_clicked()
 
 }
 
+//ENTRADAS:
+//DESCRIPCION: pone en pausa las maquinas y personas
+//SALIDA: void
 void MainWindow::on_btnPausa_clicked()
 {
     mezcladoraThread1->detenerse = true;
@@ -214,61 +271,110 @@ void MainWindow::on_btnPausa_clicked()
     empacadoraThread->detenerse = true;
 }
 
+//ENTRADAS:
+//DESCRIPCION: cambia el estado de la maquina,
+//             si estaba en pausa la pone a trabajr y viceversa
+//SALIDA: void
 void MainWindow::on_btnMezcladora1_clicked()
 {
     mezcladoraThread1->detenerse = !mezcladoraThread1->detenerse;
 }
 
+//ENTRADAS:
+//DESCRIPCION: cambia el estado de la maquina,
+//             si estaba en pausa la pone a trabajr y viceversa
+//SALIDA: void
 void MainWindow::on_btnMezcladora2_clicked()
 {
     mezcladoraThread2->detenerse = !mezcladoraThread2->detenerse;
 }
 
+//ENTRADAS:
+//DESCRIPCION: cambia el estado de la maquina,
+//             si estaba en pausa la pone a trabajr y viceversa
+//SALIDA: void
 void MainWindow::on_btnMezcladora3_clicked()
 {
     mezcladoraThread3->detenerse = !mezcladoraThread3->detenerse;
 }
 
+//ENTRADAS:
+//DESCRIPCION: cambia el estado de la maquina,
+//             si estaba en pausa la pone a trabajr y viceversa
+//SALIDA: void
 void MainWindow::on_btnEnsambladora_clicked()
 {
     ensambladoraThread->detenerse = !ensambladoraThread->detenerse;
 }
 
+//ENTRADAS:
+//DESCRIPCION: cambia el estado de la maquina,
+//             si estaba en pausa la pone a trabajr y viceversa
+//SALIDA: void
 void MainWindow::on_btnHorno1_clicked()
 {
     hornoThread->horno1->encendido = !hornoThread->horno1->encendido;
 }
 
+
+//ENTRADAS:
+//DESCRIPCION: cambia el estado de la maquina,
+//             si estaba en pausa la pone a trabajr y viceversa
+//SALIDA: void
 void MainWindow::on_btnHorno_2_clicked()
 {
     hornoThread->horno4->encendido = !hornoThread->horno4->encendido;
 }
 
+//ENTRADAS:
+//DESCRIPCION: cambia el estado de la maquina,
+//             si estaba en pausa la pone a trabajr y viceversa
+//SALIDA: void
 void MainWindow::on_btnHorno_3_clicked()
 {
     hornoThread->horno3->encendido = !hornoThread->horno3->encendido;
 }
 
+//ENTRADAS:
+//DESCRIPCION: cambia el estado de la maquina,
+//             si estaba en pausa la pone a trabajr y viceversa
+//SALIDA: void
 void MainWindow::on_btnHorno_4_clicked()
 {
     hornoThread->horno6->encendido = !hornoThread->horno6->encendido;
 }
 
+//ENTRADAS:
+//DESCRIPCION: cambia el estado de la maquina,
+//             si estaba en pausa la pone a trabajr y viceversa
+//SALIDA: void
 void MainWindow::on_btnCalidad1_clicked()
 {
     controlCalidad->inspec_1->detenerse = !controlCalidad->inspec_1->detenerse;
 }
 
+//ENTRADAS:
+//DESCRIPCION: cambia el estado de la maquina,
+//             si estaba en pausa la pone a trabajr y viceversa
+//SALIDA: void
 void MainWindow::on_btnCalidad2_clicked()
 {
     controlCalidad->inspec_2->detenerse = !controlCalidad->inspec_2->detenerse;
 }
 
+//ENTRADAS:
+//DESCRIPCION: cambia el estado de la maquina,
+//             si estaba en pausa la pone a trabajr y viceversa
+//SALIDA: void
 void MainWindow::on_btn_config_clicked()
 {
     config->setVisible(true);
 }
 
+//ENTRADAS:
+//DESCRIPCION: cambia el estado de la maquina,
+//             si estaba en pausa la pone a trabajr y viceversa
+//SALIDA: void
 void MainWindow::on_btnEmpacadora_clicked()
 {
     empacadoraThread->detenerse = !empacadoraThread->detenerse;

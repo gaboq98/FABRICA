@@ -1,11 +1,19 @@
 #include "hornothread.h"
 
+
+//DESCRIPCION: constructor de hilo del horno
 HornoThread::HornoThread()
 {
     encendido = true;
     detenerse = false;
 }
 
+
+//DESCRIPCION: implementacion de la funcion run()
+//             recorre los horno y los itera hasta
+//             llenarlos y cumplir el tiempo de llenado
+//             emite la cantidad actual delos hornos a la interfaz
+//             emite la cantidad total de galletas horneadas
 void HornoThread::run()
 {
     while(encendido) {
