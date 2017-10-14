@@ -10,9 +10,8 @@ struct Empacadora
     QVector<int> tiposDePaquete;
     ListaCircular *lista;
     int tiempo;
-    int cantidadTiempo;
     Empacadora();
-    int empaca();
+    void empaca();
 };
 
 #endif // EMPACADORA_H

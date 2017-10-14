@@ -2,17 +2,20 @@
 
 Empacadora::Empacadora()
 {
-    banda = 0;
+    banda = nullptr;
 }
 
-int Empacadora::empaca()
+void Empacadora::empaca()
 {
-    int num = rand() % tiposDePaquete.size();
-    int result;
-    for(int i = 0; i < tiposDePaquete.size(); i++){
-        if(i == num)
-            result = tiposDePaquete[i];
+    int num = rand() % 100;
+    int acumulador = 0;
+    for(int i = 0; i < lista->length; i++){
+        acumulador += lista->obtener(i)->probabilidad;
+        if(num <= acumulador){
+            result = lista->obtener(i)->paquete;
+            //lista->obtener(i)->camion->actual++;
+            break;
+        }
     }
-    banda -= result;
-    return result;
+    *banda -= result;
 }
