@@ -17,6 +17,7 @@ public:
     bool hornea();
     int contador;
     bool cocinando;
+    void reset();
 
 };
 

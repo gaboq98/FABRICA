@@ -38,3 +38,11 @@ bool Horno::hornea()
     }
     return false;
 }
+
+
+void Horno::reset()
+{
+    actual = 0;
+    contador = 0;
+    total = 0;
+}

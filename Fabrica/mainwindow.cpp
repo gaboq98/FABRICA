@@ -398,6 +398,7 @@ void MainWindow::on_btnReiniciar_clicked()
     bandaChocolate = 0;
     bandaHorno = 0;
     ensambladora->procesado = 0;
+    hornoThread->reset();
     ponerBanda();
     hornosActual(0,0,0,0,0,0);
     hornosTotal(0,0,0,0,0,0);
