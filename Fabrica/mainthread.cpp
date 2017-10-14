@@ -12,6 +12,8 @@ MainThread::MainThread(QObject *parent) : QThread(parent)
 
 void MainThread::run()
 {
-
+    while (encendido) {
+        emit actualizarLista();
+    }
 }
 

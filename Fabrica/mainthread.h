@@ -15,7 +15,7 @@ public:
 
 signals:
 
-    void cambiarNumero(int);
+    void actualizarLista();
 
 public slots:
 

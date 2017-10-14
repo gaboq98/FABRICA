@@ -58,17 +58,14 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(controlThread, SIGNAL( entregaRech1(int)), this, SLOT(cambiarRechazado1(int)));
     connect(controlThread, SIGNAL( entregaRech2(int)), this, SLOT(cambiarRechazado2(int)));
 
-    empacadora = new Empacadora;
+    empacadora = new Empacadora();
     empacadora->banda = &controlCalidad->salida;
 
     empacadoraThread = new EmpacadoraThread(empacadora);
 
-    connect(empacadoraThread, SIGNAL(enviarPaquete(QVector<int>,ListaCircular*)), this, SLOT(recibirPaquete(QVector<int>,ListaCircular*)));
-
     config = new Configuracion(this);
-    config->asignarValores(mezcladora1, mezcladora2, mezcladora3, ensambladora, hornoThread, controlCalidad, empacadora);
-
-    empacadora->set_lista(config->lista);
+    connect(config, SIGNAL(actualizarLista(ListaCircular*)), this, SLOT(recibeLista(ListaCircular*)));
+    connect(empacadoraThread, SIGNAL(enviarPaquete(QVector<int>,ListaCircular*)), this, SLOT(recibirPaquete(QVector<int>,ListaCircular*)));
 
 }
 
@@ -223,10 +220,15 @@ void MainWindow::hornosTotal(int h1, int h2, int h3, int h4, int h5, int h6)
 //SALIDA: void
 void MainWindow::recibirPaquete(QVector<int> vector, ListaCircular *lista)
 {
-    qDebug() << "pee";
+    ui->empacador->document()->setPlainText("");
     for(int i = 0; i < vector.size(); i++) {
-        ui->empacador->appendPlainText(QString(QString::number(i) + " por paquete de " + QString::number(lista->obtener(i)->paquete)));
+        ui->empacador->appendPlainText(QString(QString::number(vector[i]) + " paquetes de " + QString::number(lista->obtener(i)->paquete) + " galletas"));
     }
+}
+
+void MainWindow::recibeLista(ListaCircular*l)
+{
+    empacadora->set_lista(l);
 }
 
 //ENTRADAS:
@@ -234,6 +236,8 @@ void MainWindow::recibirPaquete(QVector<int> vector, ListaCircular *lista)
 //SALIDA: void
 void MainWindow::on_btnInicio_clicked()
 {
+    config->asignarValores(mezcladora1, mezcladora2, mezcladora3, ensambladora, hornoThread, controlCalidad, empacadora);
+    //empacadora->set_lista(config->lista);
     mezcladoraThread1->start();
     mezcladoraThread1->detenerse = false;
 
@@ -368,6 +372,7 @@ void MainWindow::on_btnCalidad2_clicked()
 //SALIDA: void
 void MainWindow::on_btn_config_clicked()
 {
+    ui->btnPausa->click();
     config->setVisible(true);
 }
 

@@ -3,7 +3,7 @@
 //DESCRIPCION: constructor de la empacadora
 Empacadora::Empacadora()
 {
-    banda = nullptr;
+    //banda = nullptr;
 }
 
 //DESCRIPCION: genera un numero random con el cual busca
@@ -13,19 +13,24 @@ Empacadora::Empacadora()
 
 int Empacadora::empaca()
 {
+    qDebug() << "banda: " << *banda;
     int result = 0;
-    int num = rand() % 100;
     int acumulador = 0;
+    int num = rand() % 100;
     for(int i = 0; i < lista->length; i++){
         acumulador += lista->obtener(i)->probabilidad;
+        qDebug() << "pribabilidad: " << acumulador;
+        qDebug() << num;
         if(num <= acumulador){
             result = lista->obtener(i)->paquete;
-            lista->obtener(i)->camion->actual++;
-            totalpack[i]++;
-            break;
+            if(*banda > result){
+                lista->obtener(i)->camion->actual++;
+                totalpack[i]++;
+                *banda -= result;
+                break;
+            }
         }
     }
-    *banda -= result;
     return result;
 }
 
@@ -37,5 +42,5 @@ int Empacadora::empaca()
 void Empacadora::set_lista(ListaCircular* l)
 {
     lista = l;
-    totalpack.reserve(lista->length);
+    totalpack.resize(lista->length);
 }

@@ -11,7 +11,7 @@ struct Nodo
     Nodo *siguiente;
     Nodo *anterior;
     Nodo();
-    Nodo(int pack, int cant, Camion *c);
+    Nodo(int pack, int cant, int prob, Camion *c);
 };
 
 #endif // NODO_H

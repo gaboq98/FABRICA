@@ -70,6 +70,7 @@ void Configuracion::asignarValores(MezcladoraMasa *m1, MezcladoraMasa *m2, Mezcl
 }
 
 
+
 //DESCRIPCION: funcion que agrega un elemento en la lista de galletas,
 //             obtiene los valores de la configuracion y agrega el string a
 //             area de texto, tambien, se setea el valor maximo de la probabilidad por paquete
@@ -80,7 +81,7 @@ void Configuracion::on_pushButton_clicked()
     thread->start();
     camion->maximo = ui->max_camion_entrega->value();
     camion->tiempo = ui->tiempo_camion->value();
-    lista->insertar(ui->cantidad_por_paquete->value(), ui->cantidad_de_paquetes->value(), camion);
+    lista->insertar(ui->cantidad_por_paquete->value(), ui->cantidad_de_paquetes->value(), ui->probabilidad_paquete->value(), camion);
     QString str = QString::number(ui->cantidad_de_paquetes->value()) + " paquetes de " + QString::number(ui->cantidad_por_paquete->value());
     ui->lista_de_paquetes->appendPlainText(str);
     ui->probabilidad_paquete->setMaximum(ui->probabilidad_paquete->maximum() - ui->probabilidad_paquete->value());
@@ -91,5 +92,7 @@ void Configuracion::on_pushButton_clicked()
 //DESCRIPCION: funcion del boton guardar, cierra la ventana de configuracion
 void Configuracion::on_pushButton_2_clicked()
 {
+    qDebug() << lista->imprimir();
+    emit actualizarLista(lista);
     this->setVisible(false);
 }
